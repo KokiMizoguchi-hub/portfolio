@@ -1,0 +1,1112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 500vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header .logo {
+  height: 50px;
+}
+
+header .menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  width: 40px;
+  height: 30px;
+}
+
+header .menu-toggle span {
+  display: block;
+  height: 2px;
+  background-color: #333;
+  transition: background-color 0.3s;
+}
+
+header .menu-toggle span:first-child,
+header .menu-toggle span:last-child {
+  width: 100%;
+}
+
+header .menu-toggle span.middle {
+  width: 50%;
+  background-color: red;
+}
+
+header .menu-toggle:hover span {
+  background-color: #555;
+}
+
+.header6 {
+  background-color: #00051C;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: -19em;
+  padding-top: 150px;
+}
+
+.good {
+  padding-top: 110px;
+}
+
+.header6 p {
+  margin-top: 130px;
+  margin-right: 35em;
+  margin-left: 20px;
+  position: fixed;
+}
+
+.header5 {
+  background-color: #ffffff;
+  text-align: center;
+  margin-bottom: 180px;
+  margin-top: -135px;
+}
+
+.good1 {
+  margin-top: 65px;
+  margin-bottom: 60px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.header5 p {
+  position: fixed;
+  color: white;
+  margin-top: -35px;
+  right: 35.5em;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+}
+
+.dot {
+  position: relative;
+  font-size: 45px;
+  margin-left: -4px;
+  margin-right: -4px;
+  top: 3.5px;
+}
+
+.dot1 {
+  position: relative;
+  top: 11px;
+}
+
+.header5 p .dot2 {
+  -webkit-text-stroke: 0px;
+  text-stroke: 0px;
+  position: relative;
+  font-size: 45px;
+  margin-left: -4px;
+  margin-right: -4px;
+  top: 3.5px;
+  color: #ff0000;
+}
+
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* メニューが開いたときのスタイル */
+.hamburger-menu.open .bar:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open .bar:last-child {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+/* サイドメニューのスタイル */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.side-menu-open {
+  right: 0;
+}
+
+.hamburger-menu1 {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-menu1 .bar1 {
+  width: 100%;
+  height: 3px;
+  background-color: #4d0000;
+  transition: all 0.3s ease;
+}
+
+/* メニューが開いたときのスタイル */
+.hamburger-menu1.open .bar1:first-child {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu1.open .bar1:last-child {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+/* サイドメニューのスタイル */
+/* サイドメニューのスタイル */
+.side-menu1 {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  /* 初期位置を画面外に設定 */
+  width: 250px;
+  height: 100%;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  transition: right 0.3s ease;
+  /* rightプロパティのトランジションを追加 */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  /* 初期状態では非表示 */
+}
+
+.side-menu1.side-menu-open {
+  right: 0;
+  visibility: visible;
+}
+
+.side-menu1 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu1 ul li {
+  margin: 20px 0;
+}
+
+.side-menu1 ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.bar1:first-child {
+  transform: rotate(45deg) translate(0px, 18px);
+}
+
+.bar1:last-child {
+  transform: rotate(45deg) translate(12px, 0px);
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #fff;
+}
+
+.bar1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #fff;
+}
+
+.bar:first-child {
+  transform: rotate(45deg) translate(0px, 18px);
+}
+
+.bar:last-child {
+  transform: rotate(45deg) translate(12px, 0px);
+}
+
+main {
+  padding: 20px;
+}
+
+main section {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  header nav ul li {
+    display: block;
+    text-align: center;
+  }
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.color-change {
+  transition: background-color 0.2s;
+}
+
+.page6 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  padding-top: 150px;
+  transition: opacity 1.5s ease, visibility 1.5s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #00051C;
+}
+
+.page5 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  background-color: #ffffff;
+  transition: opacity 2s ease, visibility 2s ease;
+  position: relative;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.page6.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page5.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.name {
+  color: #fff;
+}
+
+.name h1 {
+  color: #fff;
+  margin-left: 6em;
+  margin-top: 300px;
+  font-size: 120px;
+}
+
+.name h1 span {
+  color: #fff;
+  font-size: 140px;
+  margin: -15px;
+}
+
+.name1 h1 {
+  color: #fff;
+  margin-left: 6em;
+  font-size: 120px;
+  -webkit-text-stroke: 3px black;
+  text-stroke: 3px black;
+}
+
+.name1 h1 .dot3 {
+  position: relative;
+  top: 11px;
+  -webkit-text-stroke: 0px;
+  text-stroke: 0px;
+}
+
+.name1 h1 span {
+  color: #ff0000;
+  font-size: 140px;
+  margin: -15px;
+}
+
+.horizontal-line1 {
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.horizontal-line2 {
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+}
+
+.social-links {
+  font-weight: 900;
+  margin-top: 10px;
+  margin-right: 30em;
+  color: #fff;
+  display: inline-block;
+}
+
+.social-links1 {
+  font-weight: 900;
+  margin-top: 10px;
+  margin-right: 30em;
+  color: #000;
+  display: inline-block;
+}
+
+.social-icon {
+  margin-right: 10px;
+}
+
+.social-icon1 {
+  margin-right: 10px;
+  color: #000;
+}
+
+
+.title h1 {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  color: #333;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 160vh;
+  /* page5 の下に配置 */
+}
+
+.image-container {
+  position: relative;
+  margin-right: 40px;
+}
+
+
+.image-container .overlay {
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  background-color: rgba(255, 0, 0, 0.824);
+  /* 薄い赤色のオーバーレイ */
+  display: flex;
+  border: 4px solid black;
+  /* ここで縁を黒くする */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* 影を追加 */
+}
+
+.box3 .working {
+  display: block;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  /* 内側の縁の位置調整 */
+  left: 6px;
+  /* 内側の縁の位置調整 */
+  right: 6px;
+  /* 内側の縁の位置調整 */
+  bottom: 6px;
+  /* 内側の縁の位置調整 */
+  border: 3px solid rgb(255, 255, 255);
+  /* 内側の縁 */
+  pointer-events: none;
+  /* 内側の縁がクリックをブロックしないように */
+  transition: border-color 0.2s;
+  /* 内側の縁の色変化のトランジションを3秒に設定 */
+
+}
+
+
+
+.overlay:hover::before {
+  border-color: rgba(255, 39, 39, 0.824);
+  /* ホバー時の内側縁色 */
+}
+
+
+.image-container .text {
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+#app {
+  position: relative;
+  height: 300vh;
+  /* 全体の高さを調整 */
+}
+
+.wave-container,
+.box3 {
+  width: 100%;
+}
+
+.wave-container {
+  top: 100vh;
+  /* page6 の下に配置 */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 15px;
+  margin-bottom: 60px;
+  height: 300px;
+  transform: rotate(70deg);
+}
+
+.wave-container .wave {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+
+.wave-container .wave .arrow {
+  position: relative;
+  /* 矢印の相対位置を設定 */
+  width: 20px;
+  /* 矢印要素の幅 */
+  height: 20px;
+  /* 矢印要素の高さ */
+}
+
+/* 矢印を作成するためのスタイル */
+.wave-container .wave .arrow::before,
+.wave-container .wave .arrow::after {
+  content: '';
+  /* 疑似要素の内容を空に設定 */
+  position: absolute;
+  /* 絶対位置を設定 */
+  width: 30px;
+  /* 棒線の幅 */
+  height: 2.5px;
+  /* 棒線の高さ */
+  background-color: black;
+  /* 棒線の色 */
+}
+
+.wave-container .wave .arrow::before {
+  transform: rotate(40deg) translate(0px, 12px);
+  /* 45度回転して矢印の一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container .wave .arrow::after {
+  transform: rotate(-40deg) translate(0px, -12px);
+  /* -45度回転して矢印のもう一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container .wave.red .arrow::before,
+.wave-container .wave.red .arrow::after {
+  background-color: red;
+  /* 棒線の色を赤に設定 */
+}
+
+
+.wave-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 110px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 40px;
+
+  height: 300px;
+  transform: rotate(185deg);
+}
+
+.wave-container1 .wave {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+
+.wave-container1 .wave .arrow {
+  position: relative;
+  /* 矢印の相対位置を設定 */
+  width: 20px;
+  /* 矢印要素の幅 */
+  height: 20px;
+  /* 矢印要素の高さ */
+}
+
+/* 矢印を作成するためのスタイル */
+.wave-container1 .wave .arrow::before,
+.wave-container1 .wave .arrow::after {
+  content: '';
+  /* 疑似要素の内容を空に設定 */
+  position: absolute;
+  /* 絶対位置を設定 */
+  width: 30px;
+  /* 棒線の幅 */
+  height: 2.5px;
+  /* 棒線の高さ */
+  background-color: black;
+  /* 棒線の色 */
+}
+
+.wave-container1 .wave .arrow::before {
+  transform: rotate(40deg) translate(0px, 12px);
+  /* 45度回転して矢印の一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container1 .wave .arrow::after {
+  transform: rotate(-40deg) translate(0px, -12px);
+  /* -45度回転して矢印のもう一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container1 .wave.red .arrow::before,
+.wave-container1 .wave.red .arrow::after {
+  background-color: red;
+  /* 棒線の色を赤に設定 */
+}
+
+.wave-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: -40px;
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-bottom: 60px;
+  height: 300px;
+  margin-top: 150px;
+  transform: rotate(185deg);
+}
+
+.wave-container2 .wave {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}
+
+.wave-container2 .wave .arrow {
+  position: relative;
+  /* 矢印の相対位置を設定 */
+  width: 20px;
+  /* 矢印要素の幅 */
+  height: 20px;
+  /* 矢印要素の高さ */
+}
+
+/* 矢印を作成するためのスタイル */
+.wave-container2 .wave .arrow::before,
+.wave-container2 .wave .arrow::after {
+  content: '';
+  /* 疑似要素の内容を空に設定 */
+  position: absolute;
+  /* 絶対位置を設定 */
+  width: 30px;
+  /* 棒線の幅 */
+  height: 2.5px;
+  /* 棒線の高さ */
+  background-color: black;
+  /* 棒線の色 */
+}
+
+.wave-container2 .wave .arrow::before {
+  transform: rotate(40deg) translate(0px, 12px);
+  /* 45度回転して矢印の一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container2 .wave .arrow::after {
+  transform: rotate(-40deg) translate(0px, -12px);
+  /* -45度回転して矢印のもう一部を作成 */
+  transform-origin: center;
+  /* 回転の基点を中央に設定 */
+}
+
+.wave-container2 .wave.red .arrow::before,
+.wave-container2 .wave.red .arrow::after {
+  background-color: red;
+  /* 棒線の色を赤に設定 */
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+.animate-right {
+  animation: slideInFromRight 3s forwards;
+}
+
+.animate-left {
+  animation: slideInFromLeft 5s forwards;
+}
+
+
+.gray-box {
+  width: 100%;
+  height: auto;
+  background-color: #dedede;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+  color: #333;
+  background-color: #dedede;
+  width: 100%;
+}
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 中央に寄せる */
+  gap: 15px;
+  /* 記事間のスペース */
+  max-width: 1200px;
+  /* 必要に応じて最大幅を設定 */
+}
+
+.article {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 45%;
+  /* 必要に応じて調整 */
+  margin: 10px;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.5s;
+  /* 変形と影のトランジション */
+}
+
+.article:hover {
+  transform: translateY(2px);
+  /* ホバー時に押し込む効果 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  /* ホバー時の影を調整 */
+}
+
+
+.article img {
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #ccc;
+}
+
+.article h3 {
+  color: #333;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.article p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.line hr {
+  width: 100%;
+  height: 2px;
+  background-color: #d0d0d0a8;
+}
+
+.aboutme {
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-items: center;
+}
+
+.aboutme h1 {
+  color: #fff;
+  font-size: 40px;
+  margin-left: 60px;
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+}
+
+.aboutme hr {
+  margin-left: 60px;
+  border: none;
+  height: 2px;
+  background: #ff0000;
+  width: 70px;
+}
+
+.block {
+  width: 30%;
+  padding: 20px;
+  margin: 0 10px;
+  background-color: #fff;
+}
+
+.block p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+footer {
+  margin-top: 107em;
+  background-color: #000000;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 80px;
+}
+
+.top-links {
+  background-color: #ff0000b2;
+  padding: 50px 0;
+  font-size: 25px;
+}
+
+.bottom-content h2 {
+  margin: 30px 0 20px;
+}
+
+.bottom-content .icons {
+  margin: 10px 0;
+}
+
+.bottom-content .icons img {
+  height: 24px;
+  width: auto;
+  margin: 0 10px;
+}
+
+.bottom-content p {
+  margin-bottom: -50px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 999;
+  opacity: 0;
+}
+
+.blackout-enter-active,
+.blackout-leave-active {
+  transition: opacity 0.5s;
+}
+
+.blackout-enter,
+.blackout-leave-to {
+  opacity: 0;
+}
+
+.blackout-enter-to,
+.blackout-leave {
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 1s ease;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+
+.zoom-dot {
+  animation: zoomIn 0.6s forwards;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  /* 最初は見えない */
+  transition: opacity 1s ease-in-out;
+}
+
+.icon {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.animate-from-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.float-up {
+  animation: floatUp 1s ease-out forwards;
+}
+
+
+/* スライドトランジションのアニメーション */
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.5s ease;
+}
+
+.slide-enter,
+.slide-leave-to
+
+/* .slide-leave-active for <2.1.8 */
+  {
+  transform: translateX(100%);
+}
+
+/* CSS Animation for floating effect */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-in {
+  opacity: 0;
+  animation: floatIn 1s ease-out forwards;
+}
+
+.toggle-container {
+  display: flex;
+  overflow: hidden;
+  margin-left: 190px;
+  margin-top: -37px;
+  /* 白い線の追加 */
+  padding: 2px;
+  /* 内側に少しスペースを作るため */
+}
+
+.toggle-button {
+  padding: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.toggle-button:first-child {
+  border-right: 1px solid black;
+  border-radius: 15px 0 0 15px;
+}
+
+.toggle-button:last-child {
+  border-left: 1px solid black;
+  border-radius: 0 15px 15px 0;
+}
+
+.toggle-button:hover {
+  background-color: #ff0000;
+}
+
+.toggle-button.active {
+  background-color: #ff0000;
+  color: white;
+}
+
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,1354 @@
+ header {
+     background-color: #f5f5f5;
+     padding: 20px 0;
+     display: flex;
+     justify-content: space-between;
+     /* ロゴとナビゲーションを両端に配置 */
+     align-items: center;
+     /* 縦方向の中央揃え */
+ }
+
+ .header-logo {
+     display: inline-block;
+     font-size: 40px;
+     margin-right: 0;
+     margin-left: 60px;
+     background-color: #008a99;
+     /* ホバー時の背景色 */
+     border-radius: 2px;
+ }
+
+ .header-logo img {
+     height: 50px;
+     font-size: 30px;
+ }
+
+ .menu-item {
+     text-align: center;
+     /* テキストを中央揃えに */
+     list-style: none;
+     /* リストのスタイルをなくす */
+     margin: 0 100px;
+ }
+
+ .sub-text {
+     display: block;
+     /* ブロック要素として表示 */
+     font-size: 12px;
+     /* 小さなフォントサイズ */
+     margin-bottom: 5px;
+     /* ボタンとの間に余白を作る */
+ }
+
+ .counseling {
+     /* 既存のスタイル */
+     padding: 10px 20px;
+     /* パディングを調整 */
+     text-decoration: none;
+     /* テキストの下線をなくす */
+     color: #FFFFFF;
+     /* テキストの色 */
+     background-color: #ffa600;
+     /* ボタンの背景色 */
+     border-radius: 5px;
+     /* ボタンの角を丸くする */
+     display: inline-block;
+     /* インラインブロック要素として表示 */
+ }
+
+ .contact {
+     /* 既存のスタイル */
+     padding: 10px 20px;
+     /* パディングを調整 */
+     margin: 0 20px;
+     text-decoration: none;
+     /* テキストの下線をなくす */
+     color: #FFFFFF;
+     /* テキストの色 */
+     background-color: #00C300;
+     /* ボタンの背景色 */
+     border-radius: 5px;
+     /* ボタンの角を丸くする */
+     display: inline-block;
+     /* インラインブロック要素として表示 */
+ }
+
+ .navbar {
+     background-color: #333;
+     /* Adjust the color to match the image */
+     overflow: hidden;
+     font-family: Arial, sans-serif;
+     /* Choose a font that matches the one in the image */
+ }
+
+ .navbar ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     /* Use flexbox for horizontal alignment */
+     align-items: center;
+     /* Center items vertically */
+     justify-content: space-around;
+     /* Distribute space around menu items */
+ }
+
+ .navbar li a {
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     transition: background-color 0.3s;
+     /* Smooth transition for hover effect */
+ }
+
+ .navbar li a:hover,
+ .navbar li a:focus {
+     background-color: #ddd;
+     /* Background color for hover state */
+     color: black;
+     /* Text color for hover state */
+ }
+
+ /* Add icons font style if you are using a specific icon font library */
+ .icon {
+     padding-right: 8px;
+     /* Adjust padding to match the image */
+ }
+
+ .announcement-banner {
+     width: 100%;
+     /* バナーの幅をページ全体に設定 */
+     background-color: #008a99;
+     /* ホバー時の背景色 */
+     /* バナーの背景色を半透明のピンク色に設定 */
+     color: white;
+     /* テキストの色を白に設定 */
+     text-align: center;
+     /* テキストを中央寄せに設定 */
+     padding: 6px 0;
+     /* 上下に10pxのパディングを追加 */
+     font-family: 'Arial', sans-serif;
+     /* フォントファミリーをArialに設定 */
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     /* バナーの下に影を追加 */
+     position: relative;
+     /* 他のコンテンツとの位置関係を設定 */
+     z-index: 1000;
+     /* バナーを最前面に表示 */
+ }
+
+ .overlay-container {
+     position: relative;
+     text-align: center;
+     overflow: hidden;
+     width: 1247px;
+     /* コンテナの幅を設定 */
+     height: 600px;
+     /* コンテナの高さを設定 */
+     /* ズーム時にはみ出た部分を非表示にする */
+     /* 画像上のテキストを中央揃えにする */
+ }
+
+ .zoom-image {
+     width: 100%;
+     /* 画像の幅をコンテナに合わせる */
+     transition: transform 5s ease-in-out;
+     /* トランスフォームのアニメーション設定 */
+ }
+
+ .zoom-image:hover {
+     transform: scale(1.5);
+     /* ホバー時に画像を1.5倍に拡大 */
+ }
+
+
+ .overlay-container img {
+     width: 100%;
+     /* または必要に応じてサイズを指定 */
+     height: 700px;
+ }
+
+ .overlay-container ::after {
+     background-color: #FFF;
+ }
+
+ .CAMPAIGN {
+     font-family: 'Comfortaa', sans-serif;
+     text-align: center;
+     /* テキストを中央揃えにする */
+     font-size: 20px;
+     margin: 45px;
+ }
+
+ .CAMPAIGN h4 {
+     margin-bottom: -40px;
+ }
+
+ .view-pictures {
+     display: flex;
+     /* Flexboxを有効にする */
+     flex-wrap: wrap;
+     /* 画像がコンテナを超えた場合に折り返す */
+     justify-content: space-around;
+     /* 画像の間に均等なスペースを作る */
+     overflow: hidden;
+     position: relative;
+
+ }
+
+ .view-picture {
+     display: flex;
+     /* Flexboxを有効にする */
+     overflow: hidden;
+     /* はみ出た画像を切り取る */
+     position: relative;
+     /* 画像の間に均等なスペースを作る */
+ }
+
+ .pic1 {
+     width: 200px;
+     /* 幅を200pxに固定 */
+     height: 150px;
+     /* 高さを150pxに固定 */
+     margin: 5px;
+     border: 2px solid rgb(0, 0, 0);
+     /* 2pxの黒い境界線を追加 */
+     margin-top: 30px;
+     overflow: hidden;
+     /* はみ出た画像を切り取る */
+     display: flex;
+ }
+
+ .pic1 img {
+     width: 100%;
+     /* コンテナの幅に合わせる */
+     height: 100%;
+     /* コンテナの高さに合わせる */
+     object-fit: cover;
+     /* 画像の比率を保ちつつ、余白がないように調整 */
+     flex-shrink: 0;
+
+ }
+
+ @keyframes slide {
+     from {
+         transform: translateX(0%);
+     }
+
+     to {
+         transform: translateX(-100%);
+     }
+ }
+
+ .prev,
+ .next {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     cursor: pointer;
+     /* スタイルを追加 */
+ }
+
+ .prev {
+     left: 0;
+ }
+
+ .next {
+     right: 0;
+ }
+
+ .caption {
+     position: absolute;
+     bottom: 10px;
+     left: 10px;
+     color: white;
+ }
+
+ .image-container {
+     display: flex;
+     padding-top: 60px;
+     position: relative;
+ }
+
+ .image-container img {
+     width: 320px;
+     /* 画像の幅を250ピクセルに設定 */
+     height: 200px;
+     /* 高さを自動で調整してアスペクト比を維持 */
+ }
+
+ .image-container::after {
+     content: '';
+     position: absolute;
+     top: 60PX;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(10, 196, 229, 0.86);
+     /* 青色のオーバーレイ */
+     mix-blend-mode: multiply;
+     /* オーバーレイと画像を混合 */
+ }
+
+ .text-overlay2 {
+     position: absolute;
+     top: 50%;
+     /* 中央揃えにする場合 */
+     left: 50%;
+     /* 中央揃えにする場合 */
+     transform: translate(-50%, -50%);
+     /* 中央揃えにする場合 */
+     color: white;
+     margin-top: 40px;
+     font-size: 50px;
+     /* 好みのサイズに / / テキストの背景色 */
+     padding: 10px;
+     /* テキストの周りの余白 */
+ }
+
+ .price-simulation-container {
+     font-family: 'Comfortaa', sans-serif;
+     font-size: 20px;
+     background-size: cover;
+     /* 背景画像をコンテナに合わせてカバーする */
+     background-position: center;
+     /* 背景画像を中央に配置 */
+     color: rgb(0, 0, 0);
+     /* テキストの色を白に設定 */
+     text-align: center;
+     /* テキストを中央揃えに */
+     padding: 100px 20px;
+     /* 上下のパディングを適切に調整 */
+ }
+
+ .price-simulation-container h1 {
+     margin-top: 0;
+     margin-bottom: 0.5em;
+     /* タイトルの下の余白を調整 */
+     font-size: 2em;
+     /* フォントサイズを調整 */
+ }
+
+ .price-simulation-container p {
+     margin-top: 0.5em;
+     /* 段落の上の余白を調整 */
+     font-size: 1em;
+     /* フォントサイズを調整 */
+ }
+
+ .pdesu {
+     margin-bottom: 80px;
+ }
+
+ .gray-box {
+     background-color: #cccccc;
+     /* 灰色の背景 */
+     padding: 25px;
+     /* 上下左右に25pxの内側スペースを作る */
+     display: flex;
+     flex-direction: column;
+     /* 子要素を縦方向に並べる */
+     align-items: center;
+     /* 横方向の中央揃え */
+     justify-content: center;
+     /* 縦方向の中央揃え */
+     margin-top: -120px;
+     /* 必要に応じて調整 */
+     width: 100%;
+     /* 幅を親要素に合わせる */
+     box-sizing: border-box;
+     /* パディングを幅に含める */
+ }
+
+ .form-container {
+     width: calc(100% - 50px);
+     /* .gray-boxのpaddingを考慮した幅 */
+     margin: 0 auto;
+     /* 中央揃え */
+     padding: 20px;
+     box-sizing: border-box;
+     /* パディングを幅に含める */
+ }
+
+ .question {
+     margin-bottom: 20px;
+     /* 質問間の余白 */
+     font-size: 20px;
+     /* フォントサイズ */
+ }
+
+ select {
+     width: 100%;
+     /* 幅を100%に */
+     padding: 10px;
+     /* 内側のパディング */
+     margin-top: 10px;
+     /* 上部の余白 */
+     box-sizing: border-box;
+     /* パディングを幅に含める */
+ }
+
+ button {
+     width: 100%;
+     /* 幅を100%に */
+     padding: 10px;
+     /* ボタン内のパディングを調整 */
+     background-color: #00aabb;
+     /* ボタンの背景色 */
+     color: white;
+     /* テキストの色 */
+     border: none;
+     /* 枠線なし */
+     cursor: pointer;
+     /* カーソルをポインターに */
+     margin-top: 20px;
+     /* 上部の余白 */
+ }
+
+ button:hover {
+     background-color: #008a99;
+     /* ホバー時の背景色 */
+ }
+
+
+ .timeline {
+     display: flex;
+     /* アイテムを横並びにする */
+     justify-content: center;
+     /* アイテムを中央に寄せる */
+     flex-wrap: nowrap;
+     /* アイテムを折り返さない */
+     overflow-x: auto;
+     /* 横スクロールを有効にする */
+     gap: 20px;
+     /* アイテム間の間隔 */
+     margin: 70px 0;
+     /* 左右のマージンを自動調整して中央揃えにする */
+     padding: 20px;
+     /* コンテナのパディング */
+     background-color: #FFFFFF;
+     /* 背景色を設定 */
+ }
+
+ .timeline-item {
+     margin: 0 10px;
+     /* アイテムの左右のマージン */
+     flex: 0 0 300px;
+     /* アイテムの幅を300pxに固定 */
+     border-radius: 10px;
+     /* 角を丸くする */
+     overflow: hidden;
+     /* 枠を超えた画像を隠す */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     /* 影をつける */
+     background-color: #fff;
+     /* アイテムの背景色 */
+     transition: transform 0.3s ease-in-out;
+     /* ホバー時の動きをスムーズに */
+ }
+
+ .timeline-item:hover {
+     transform: translateY(-10px);
+     /* ホバー時に少し浮かせる */
+ }
+
+ .timeline-item img {
+     width: 100%;
+     /* 画像をアイテムの幅に合わせる */
+     display: block;
+     /* 画像をブロック要素として配置 */
+ }
+
+ .timeline-text {
+     font-size: 21px;
+     /* テキストのフォントサイズ */
+     font-weight: bold;
+     /* テキストを太字に */
+     color: #333;
+     /* テキストの色 */
+     padding: 15px;
+     /* テキスト周りのパディング */
+     text-align: center;
+     /* テキストを中央揃えに */
+ }
+
+ .call-to-action-2 {
+     text-align: center;
+     background-color: #d4d4d4;
+     padding: 60px 30px 5px 30px;
+     /* テキストを中央揃えに */
+ }
+
+ .call-to-action-2 h2 {
+     color: #17a2b8;
+     font-size: 30px;
+     margin-bottom: 20px;
+     /* ボタンとの余白 */
+ }
+
+ .buttons-2 {
+     margin: 60px;
+     display: flex;
+     gap: 20px;
+     /* ボタンの間隔 */
+ }
+
+ .orange-button-3 {
+     background-color: #ffa600;
+     /* オレンジ色の背景 */
+     padding: 10px 130px;
+     /* パディング */
+     font-size: 20px;
+ }
+
+ .green-button-3 {
+     background-color: #009900;
+     /* 緑色の背景 */
+     padding: 10px 130px;
+     /* パディング */
+     font-size: 20px;
+ }
+
+ .about-abord-website h1 {
+     margin-left: 35%;
+     margin-top: 130px;
+     display: block;
+     font-size: 40px;
+     font-family: 'Comfortaa', sans-serif;
+ }
+
+ .about-abord-website p {
+     margin-left: 37%;
+     margin-bottom: 40px;
+     display: block;
+ }
+
+ .about-abord-website-item {
+     margin-left: 60px;
+     margin-right: 60px;
+     margin-bottom: 60px;
+ }
+
+ .container-1 {
+     display: flex;
+     /* flexボックスを使ってカードを横に並べる */
+     justify-content: center;
+     /* カードを中央に寄せる */
+     gap: 20px;
+     /* カード間のギャップ */
+     padding-left: 20px;
+     /* コンテナ内のパディング */
+     background-color: #FFFFFF;
+     /* 背景色、必要に応じて変更 */
+ }
+
+ .card {
+     flex-basis: calc(25% - 20px);
+     /* カードのベースサイズを設定、ギャップを引く */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+     /* カードの影を付ける */
+     background-color: #ffffff;
+     /* カードの背景色 */
+     border-radius: 10px;
+     /* 角を丸める */
+     overflow: hidden;
+     /* 枠を超えた内容を非表示にする */
+     font-size: 20px;
+ }
+
+ .card img {
+     width: 100%;
+     /* カードの幅に合わせて画像を拡大縮小 */
+     height: auto;
+     /* 高さを自動で調整してアスペクト比を保持 */
+     display: block;
+     /* 画像をブロック要素として表示 */
+ }
+
+ .card-content {
+     padding: 15px;
+     /* 内容周りのパディング */
+     text-align: center;
+     /* テキストを中央に寄せる */
+     font-weight: bold;
+     /* テキストを太字にする */
+ }
+
+ .arrow {
+     text-align: center;
+     /* 矢印を中央に寄せる */
+     padding: 10px;
+     /* 矢印周りのパディング */
+     font-size: 24px;
+     /* 矢印のサイズを大きくする */
+ }
+
+ .background-image {
+     position: relative;
+     width: 100%;
+     height: 1300px;
+     /* 画面の高さ全体を使う */
+     background-image: url('C:/Users/kouki/Downloads/pexels-cadomaestro-1170412.jpg');
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     /* コンテンツを縦に並べる */
+     text-align: center;
+     color: white;
+     /* テキストの色を白に */
+     margin-top: 60px;
+ }
+
+ .background-image::after {
+     content: '';
+     /* 必要なプロパティ */
+     display: block;
+     /* サイズを指定できるようにする */
+     position: absolute;
+     /* 背景画像に対して絶対位置指定 */
+     z-index: 1;
+     /* z-indexを1に設定 */
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #17a3b84d;
+     /* 薄い青色の背景 */
+     pointer-events: none;
+     /* オーバーレイがクリックを阻まないようにする */
+ }
+
+ .background-image img {
+     margin: 20px;
+     /* 画像間の余白を設定 */
+     margin-top: 150px;
+     position: static;
+ }
+
+ .background-image p {
+     margin-bottom: 160px;
+     /* 画像間の余白を設定 */
+ }
+
+ .background-image h4 {
+     margin: 100px;
+     /* 画像間の余白を設定 */
+ }
+
+ .overlay-text {
+     font-size: 4em;
+     /* 大きなフォントサイズ */
+     margin: 0.5em 0;
+     /* 上下のマージン */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .background-image h4 {
+     font-size: 2em;
+     /* タイトルのフォントサイズ */
+     margin: 0.25em 0;
+     /* 上下のマージン */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .background-image p {
+     font-size: 1em;
+     /* パラグラフのフォントサイズ */
+     margin: 30px 100px;
+     /* 自動的に中央揃え */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .overlay-image {
+     display: flex;
+     margin: 0 80px;
+     justify-content: space-around;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+     /* 影をつける */
+     /* 必要に応じて追加のスタイリングをここに追加 */
+ }
+
+ .overlay-image-1 {
+     width: 300px;
+     /* 画像の幅をコンテナの30%に設定 */
+     height: 200px;
+     /* 画像の高さを自動調整 */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     border: 3px solid white;
+     /* 太さ3px、実線、青色のボーダー */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .overlay-image-2 {
+     width: 300px;
+     /* 画像の幅をコンテナの30%に設定 */
+     height: 200px;
+     /* 画像の高さを自動調整 */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     border: 3px solid white;
+     /* 太さ3px、実線、青色のボーダー */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .overlay-image-3 {
+     width: 300px;
+     /* 画像の幅をコンテナの30%に設定 */
+     height: 200px;
+     /* 画像の高さを自動調整 */
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     border: 3px solid white;
+     /* 太さ3px、実線、青色のボーダー */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .overlay-image-1 img {
+     margin: auto;
+ }
+
+ .overlay-image-2 img {
+     margin: auto;
+ }
+
+ .overlay-image-3 img {
+     margin: auto;
+ }
+
+ .text-overlay {
+     color: white;
+     font-family: 'Comfortaa', sans-serif;
+     font-size: 2em;
+     /* フォントサイズはデザインに合わせて調整 */
+     margin-bottom: 20px;
+     /* ボタンとの間隔 */
+     margin-top: 170px;
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .buttons-2 {
+     display: flex;
+     justify-content: center;
+     z-index: 2;
+     /* これらの要素が背景色の上に表示されるようにz-indexを2に設定 */
+     position: relative;
+     /* z-indexを効かせるためにpositionをrelativeに設定 */
+ }
+
+ .buttons-container {
+     z-index: 2;
+ }
+
+ .button-6 {
+     font-size: 30px;
+     background-color: white;
+     /* ボタンの背景色 */
+     color: #007BFF;
+     /* ボタンのテキスト色 */
+     width: 400px;
+     /* ボタンの幅を指定 */
+     height: 100px;
+     /* ボタンの高さを指定 */
+     margin: 3px;
+ }
+
+ .button-6:hover {
+     background-color: #f0f0f0;
+     /* ホバー時の背景色 */
+ }
+
+ .banner3 {
+     background-color: #E0E0E0;
+     /* グレーの背景色 */
+     margin-top: 60px;
+     margin-left: 160px;
+     margin-right: 160px;
+     padding: 60px 300px;
+     /* パディングを増やす */
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     /* 要素を縦に並べる */
+     align-items: center;
+     /* 中央揃え */
+     justify-content: space-around;
+     /* 上下のスペースを均等に分配 */
+ }
+
+ .text-container {
+     color: #333;
+     /* 濃いテキスト色 */
+     font-family: "Arial", sans-serif;
+     /* フォントファミリー */
+     text-align: center;
+     /* テキストを中央寄せ */
+     margin-bottom: 20px;
+     /* ボタンとの間隔 */
+ }
+
+ .text-large {
+     font-size: 24px;
+     /* 大きいテキストサイズ */
+     font-weight: bold;
+     line-height: 1.2;
+     /* 行間を調整 */
+     margin-bottom: 10px;
+     /* 行間隔 */
+ }
+
+ .text-small {
+     font-size: 16px;
+     /* 小さいテキストサイズ */
+     line-height: 1.5;
+     /* 行間を調整 */
+ }
+
+ .button-green {
+     background-color: #00C300;
+     /* LINEの緑色 */
+     color: white;
+     /* 白いテキスト色 */
+     padding: 15px 30px;
+     /* ボタンの内側の余白を増やす */
+     text-align: center;
+     border: none;
+     cursor: pointer;
+     font-size: 16px;
+     border-radius: 3px;
+     /* 角の丸みを加える */
+     text-decoration: none;
+     /* テキストの下線をなくす */
+     transition: background-color 0.3s ease;
+     /* 色の変化にアニメーションを加える */
+ }
+
+ .button-green:hover {
+     background-color: #009900;
+     /* ホバー時の色を少し暗く */
+ }
+
+ .testimonial-section {
+     text-align: center;
+     padding: 50px 0;
+ }
+
+ .section-title {
+     font-size: 36px;
+     margin-bottom: 10px;
+ }
+
+ .section-subtitle {
+     font-size: 24px;
+     color: #555;
+     margin-bottom: 50px;
+ }
+
+ .gallery {
+     display: flex;
+     margin-left: 150px;
+     flex-wrap: wrap;
+ }
+
+ .gallery-item {
+     width: 280px;
+     margin: 10px;
+ }
+
+ .gallery-item img {
+     width: 100%;
+     height: auto;
+     border-radius: 5px;
+     /* Optional: if you want rounded corners */
+ }
+
+ .name-tag {
+     font-size: 14px;
+     color: #666;
+     margin-top: 5px;
+ }
+
+ .banner2 {
+     background-color: #00aabb;
+     /* バナーの背景色 */
+     padding: 60px 300px;
+     /* パディングを増やす */
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: column;
+     /* 要素を縦に並べる */
+     align-items: center;
+     /* 中央揃え */
+     justify-content: space-around;
+     /* 上下のスペースを均等に分配 */
+ }
+
+ .banner-content {
+     display: inline-block;
+     /* ブロックレベルの要素をインラインに */
+     margin: 0 auto;
+     /* 自動的に中央揃え */
+ }
+
+ .banner-text {
+     color: white;
+     /* テキストの色 */
+     margin-bottom: 20px;
+     /* ボタンとの間隔 */
+     font-size: 18px;
+     /* フォントサイズ */
+ }
+
+ .top-text {
+     margin-bottom: 20px;
+     /* Space below the top text */
+     font-size: 16px;
+     /* Font size for the top text */
+ }
+
+ .button-container {
+     margin-bottom: 30px;
+ }
+
+ .icon-button {
+     background-color: white;
+     /* White background for the icon buttons */
+     color: #17a2b8;
+     /* Text color for the icon buttons */
+     border: 2px solid white;
+     /* Border for the icon buttons */
+     padding: 20px 160px;
+     /* Padding inside the icon buttons */
+     margin: 0 10px;
+     /* Margin between the icon buttons */
+     font-size: 16px;
+     /* Font size for the icon buttons */
+     cursor: pointer;
+     /* Cursor to pointer to signify clickable */
+ }
+
+ .icon-button.download-button::before {
+     content: '⬇';
+     /* Icon before the text */
+     margin-right: 8px;
+     /* Margin between the icon and text */
+ }
+
+ .main-button-container {
+     margin-bottom: 20px;
+     margin-left: 130px;
+     /* Space below the main button container */
+ }
+
+ .main-button {
+     background-color: transparent;
+     /* Transparent background for the main button */
+     color: white;
+     /* White text color for the main button */
+     border: 2px solid white;
+     /* Border for the main button */
+     padding: 20px 40px;
+     /* Padding inside the main button */
+     font-size: 20px;
+     /* Font size for the main button */
+     cursor: pointer;
+     /* Cursor to pointer to signify clickable */
+     max-width: 80%;
+     /* Max width for the main button */
+     margin: auto;
+     /* Centering the main button */
+ }
+
+ .main-button:hover {
+     background-color: white;
+     /* Background color change on hover */
+     color: #17a2b8;
+     /* Text color change on hover */
+ }
+
+ .button-9 {
+     width: 30%;
+     margin: 0 400px;
+     padding: 10px;
+     text-align: center;
+     border: 2px solid #17a2b8;
+     color: #17a2b8;
+     font-weight: bold;
+     cursor: pointer;
+ }
+
+ .buttons-container-1 {
+     background-color: #E0E0E0;
+     /* グレイの背景 */
+     height: 300px;
+     /* 高さ500px */
+     display: flex;
+     align-items: center;
+     /* 縦方向中央揃え */
+     justify-content: center;
+     /* 横方向中央揃え */
+ }
+
+ .call-to-action-1 {
+     text-align: center;
+     /* テキストを中央揃えに */
+ }
+
+ .call-to-action-1 h2 {
+     color: #17a2b8;
+     font-size: 30px;
+     margin-bottom: 20px;
+     /* ボタンとの余白 */
+ }
+
+ .buttons-2 {
+     margin: 60px;
+     display: flex;
+     gap: 20px;
+     /* ボタンの間隔 */
+ }
+
+ .orange-button-3 {
+     background-color: #ffa600;
+     /* オレンジ色の背景 */
+     padding: 10px 130px;
+     /* パディング */
+     font-size: 20px;
+ }
+
+ .green-button-3 {
+     background-color: #009900;
+     /* 緑色の背景 */
+     padding: 10px 130px;
+     /* パディング */
+     font-size: 20px;
+ }
+
+ .button-5:hover {
+     opacity: 0.9;
+     /* ホバー時の透明度変更 */
+ }
+
+ .container-9 {
+     margin: 0 200px;
+ }
+
+ .header-9 h1 {
+     margin-left: 380px;
+
+ }
+
+ .header-9 p {
+     margin-left: 415px;
+     margin-bottom: 50px;
+ }
+
+ .content {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .card {
+     width: 30%;
+     background-color: #f0f0f0;
+     padding: 20px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     margin-bottom: 20px;
+ }
+
+ .card img {
+     width: 100%;
+     height: auto;
+     border-radius: 5px;
+     margin-bottom: 15px;
+ }
+
+ .card h2 {
+     font-size: 1.2em;
+     margin-bottom: 5px;
+ }
+
+ .card p {
+     font-size: 0.9em;
+     color: #333;
+     margin-bottom: 5px;
+ }
+
+ .card .date {
+     font-size: 0.8em;
+     color: #999;
+     margin-bottom: 10px;
+ }
+
+ .card .tags {
+     font-size: 0.8em;
+     color: #666;
+ }
+
+ .button-13 {
+     width: 30%;
+     margin: 50px;
+     margin-left: 350px;
+     padding: 10px;
+     text-align: center;
+     border: 2px solid #17a2b8;
+     color: #17a2b8;
+     font-weight: bold;
+     cursor: pointer;
+ }
+
+ .main-container {
+     margin: auto;
+     padding: 20px;
+     text-align: center;
+ }
+
+ .image-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+     gap: 10px;
+ }
+
+ .image-item img {
+     width: 100%;
+     /* コンテナの幅に合わせて画像を拡大 */
+     height: auto;
+     /* 画像のアスペクト比を維持 */
+     max-width: 300px;
+     /* 最大幅を設定 */
+     max-height: 200px;
+     /* 最大高さを設定 */
+ }
+
+ .call-to-action {
+     margin-top: 20px;
+ }
+
+ .cta-button {
+     padding: 10px 20px;
+     margin-right: 10px;
+     background-color: #17a2b8;
+     color: white;
+     border: none;
+     cursor: pointer;
+     font-size: 16px;
+     border-radius: 5px;
+ }
+
+ .line-button {
+     background-color: #00c300;
+ }
+
+ .slideshow-container {
+     position: relative;
+     max-width: 1000px;
+     margin: auto;
+     overflow: hidden;
+     /* 横スクロールバーを非表示に */
+ }
+
+ .slide {
+     display: none;
+     /* 最初は全てのスライドを非表示に */
+     width: 100%;
+     height: 300px;
+     /* または必要な高さ */
+     background-size: cover;
+     background-position: center;
+ }
+
+ .text {
+     color: white;
+     font-size: 30px;
+     padding: 20px;
+     position: absolute;
+     bottom: 20px;
+     width: 100%;
+     text-align: center;
+ }
+
+ .prev,
+ .next {
+     cursor: pointer;
+     position: absolute;
+     top: 50%;
+     width: auto;
+     margin-top: -22px;
+     padding: 16px;
+     color: white;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+ }
+
+ .next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+ }
+
+ .prev:hover,
+ .next:hover {
+     background-color: rgba(0, 0, 0, 0.8);
+ }
+
+
+ /* レスポンシブ対応 */
+ @media (max-width: 600px) {
+     .image-grid {
+         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+     }
+ }
+
+ .content-wrapper {
+     width: 80%;
+     margin: 20px auto;
+ }
+
+ button-2 .buttons {
+     margin-bottom: 20px;
+ }
+
+ .button {
+     padding: 10px 20px;
+     color: white;
+     border: none;
+     cursor: pointer;
+     margin-right: 10px;
+     /* Add some space between buttons */
+ }
+
+ .orange-button {
+     background-color: #ffa500;
+     /* Replace with actual color code */
+ }
+
+ .green-button {
+     background-color: #008000;
+     /* Replace with actual color code */
+ }
+
+ .blue-section {
+     background-color: #007BFF;
+     /* This is a common blue color; replace with the exact color code from the image */
+     padding: 20px;
+     color: white;
+     text-align: center;
+     /* Center the text */
+     margin-bottom: 20px;
+     /* Add space between sections */
+ }
+
+ .blue-section p,
+ .contact-section p {
+     margin-bottom: 10px;
+     /* Adjust paragraph spacing */
+ }
+
+ .input-field {
+     width: calc(100% - 22px);
+     padding: 10px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+     /* Include padding in the width */
+     display: block;
+     /* Make input fields block elements */
+ }
+
+ .button {
+     background-color: white;
+     /* Button background */
+     border: 1px solid #007BFF;
+     /* Border color same as the blue-section background */
+     color: #007BFF;
+     /* Text color same as the blue-section background */
+     padding: 10px 20px;
+     text-transform: uppercase;
+     /* Uppercase button text */
+     cursor: pointer;
+     /* Change cursor to pointer on hover */
+     margin-top: 10px;
+     /* Space above the button */
+     width: auto;
+     /* Auto width based on content */
+ }
+
+ /* Add hover effect for buttons */
+ .button:hover {
+     background-color: #0056b3;
+     /* Darker blue on hover */
+     color: white;
+ }
+
+ .site-footer {
+     background: #333;
+     /* Dark background for the footer */
+     color: white;
+     padding: 20px 0;
+     font-size: 14px;
+ }
+
+ .footer-content {
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-start;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+ }
+
+ .footer-section {
+     margin-right: 20px;
+ }
+
+ .footer-section h6 {
+     margin-top: 0;
+     margin-bottom: 10px;
+     font-weight: bold;
+ }
+
+ .footer-section ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+
+ .footer-section ul li {
+     margin-bottom: 5px;
+ }
+
+ .footer-icons {
+     display: flex;
+     align-items: center;
+ }
+
+ .footer-icons a {
+     display: inline-block;
+     margin-right: 10px;
+ }
+
+ .footer-icons a img {
+     width: 24px;
+     /* Adjust the size as needed */
+     height: auto;
+ }

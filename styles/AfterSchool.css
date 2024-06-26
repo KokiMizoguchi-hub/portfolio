@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: #ffffff;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  /* Make sure it stays on top of other content */
+}
+
+header img {
+  margin: 10px 0 10px 5px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-menu .hamburger {
+  position: absolute;
+  margin-left: 990px;
+  top: 15px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger-menu .menu-items {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hamburger-menu .menu-items a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-image {
+  margin: 75px 0 80px 85px;
+}
+
+.main-image img {
+  width: 1050px;
+  height: 300px;
+}
+
+.blog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.blog-container .blog-entry {
+  margin: 20px;
+  width: 450px;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-container .blog-entry img {
+  width: 450px;
+  height: 150px;
+}
+
+.blog-container .blog-entry .date,
+.blog-container .blog-entry .title,
+.blog-container .blog-entry .summary {
+  padding: 10px;
+}
+
+.blog-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin-top: 250px;
+}
+
+.blog-container1 .blog-entry1 {
+  margin: 20px;
+  width: 450px;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-container1 .blog-entry1 img {
+  width: 450px;
+  height: 150px;
+}
+
+.title3 {
+  margin-bottom: 30px;
+}
+
+.blog-container1 .blog-entry1 .date1,
+.blog-container1 .blog-entry1 .title1,
+.blog-container1 .blog-entry1 .summary1 {
+  padding: 10px;
+}
+
+.message-form {
+  margin-top: 210PX;
+  padding: 3rem;
+  background: #edaa00;
+  color: #fff;
+}
+
+.message-form p {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.message-form .message-form-bottom {
+  display: flex;
+  justify-content: center;
+  /* 要素を中心に配置 */
+  margin-top: 1rem;
+}
+
+.message-form .message-form-bottom .button-style {
+  display: inline-block;
+  /* ボタンがインライン要素として扱われるように */
+  padding: 1rem 2rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.message-form .message-form-bottom .button-style:hover {
+  background-color: #eaeaea;
+  /* ホバー時の背景色を少し暗く */
+  color: #000;
+  /* ホバー時のテキスト色を黒に */
+}
+
+.message-form .message-form-bottom .button-style-1 {
+  background: #38c2de;
+  /* 緑の背景色 */
+}
+
+.message-form .message-form-bottom .button-style-2 {
+  background: #38de59;
+  /* 緑の背景色 */
+}
+
+.message-form .message-form-bottom .button-style-3 {
+  background: #dbf131;
+  /* 黄色の背景色 */
+}
+
+.message-form .message-sub-form {
+  margin: 20px;
+}
+
+.message-form .message-sub-form p {
+  font-size: 15px;
+}
+
+.copy-rights p {
+  text-align: center;
+  /* テキストを中央に揃える */
+}
+
+.Indo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0 0 0;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.196);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.title11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1px;
+  /* タイトルと横線の間隔を調整 */
+}
+
+.divider-0 {
+  background-color: #eaeaea;
+  width: 90%;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  margin-top: 0;
+  font-weight: bold;
+}

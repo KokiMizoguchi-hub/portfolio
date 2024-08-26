@@ -30,13 +30,9 @@
               {{ capitalize(category) }}
             </p>
           </div>
-          <div class="task-category">
-            <p><i class="fa-solid fa-icons"></i>Everything</p>
-          </div>
         </div>
         <div class="bigbox">
           <h2>今日</h2>
-          <h4>プロジェクト</h4>
           <div class="sometasks">
             <div
               v-for="(task, index) in filteredTasks('today')"
@@ -50,6 +46,7 @@
               <p>{{ task.description }}</p>
               <p class="task-time">#{{ task.time }}</p>
               <button class="removetask" @click="removeTask(index, 'today')">✖</button>
+              <h4>{{ getInboxTitle(task.inbox) }}</h4>
             </div>
           </div>
           

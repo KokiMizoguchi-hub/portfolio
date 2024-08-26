@@ -20,6 +20,7 @@ body {
 
 .task-time {
     color: green;
+    margin-left: 8px;
 }
 
 
@@ -245,6 +246,10 @@ body {
 .sometasks .task:last-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.sometasks h4 {
+    
 }
 
 .custom-checkbox {

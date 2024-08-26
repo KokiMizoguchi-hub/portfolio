@@ -8,15 +8,16 @@ new Vue({
       taskDescription: '',
       taskPriority: 'low',
       taskTime: '',
-      taskInbox: 'inbox',
+      taskInbox: 'inbox', // タスクのインボックスをデフォルトで 'inbox' に設定
       categories: ['今日の予定', '明日の予定', '今週の予定', '来月の予定', '予定なし'],
       tasks: [
-        { text: 'Example Task 1', time: '10:00', category: 'today', done: false, priority: 'low' },
-        { text: 'Example Task 2', time: '12:00', category: 'tomorrow', done: false, priority: 'medium' },
-        { text: 'Example Task 3', time: '14:00', category: 'upcoming', done: false, priority: 'high' },
-        { text: 'Example Task 4', time: '16:00', category: 'month', done: false, priority: 'medium' },
-        { text: 'Example Task 5', time: '', category: 'noDueDate', done: false, priority: 'low' }
-      ]
+        { text: 'Example Task 1', time: '10:00', category: 'today', done: false, priority: 'low', inbox: 'inbox' },
+        { text: 'Example Task 2', time: '12:00', category: 'today', done: false, priority: 'medium', inbox: 'personal' },
+        { text: 'Example Task 3', time: '14:00', category: 'today', done: false, priority: 'high', inbox: 'work' },
+        { text: 'Example Task 4', time: '16:00', category: 'today', done: false, priority: 'medium', inbox: 'study' },
+        { text: 'Example Task 5', time: '', category: 'today', done: false, priority: 'low', inbox: 'hoppy' }
+      ],
+      displayedInboxes: {} // インボックス名が表示されたかどうかを追跡するオブジェクト
     };
   },
   computed: {
@@ -53,18 +54,22 @@ new Vue({
         description: this.taskDescription,
         priority: this.taskPriority,
         time: this.taskTime,
-        inbox: this.taskInbox,
+        inbox: this.taskInbox, // タスクに選択されたインボックスを保存
         category: 'today',
         done: false
       };
       this.tasks.push(newTask);
 
+      // フォームをリセット
       this.taskName = '';
       this.taskDescription = '';
       this.taskPriority = 'low';
       this.taskTime = '';
       this.taskInbox = 'inbox';
       this.showTaskForm = false;
+
+      // タスクが追加された後に追跡オブジェクトをリセット
+      this.displayedInboxes = {};
     },
     removeTask(index, category) {
       const taskIndex = this.tasks.findIndex(
@@ -104,6 +109,30 @@ new Vue({
       this.taskTime = '';
       this.taskInbox = 'inbox';
       this.showTaskForm = false;
+    },
+    getInboxTitle(inbox) {
+      switch (inbox) {
+        case 'inbox':
+          return 'インボックス';
+        case 'personal':
+          return '個人';
+        case 'work':
+          return '仕事';
+        case 'study':
+          return '学習';
+        case 'hoppy':
+          return '趣味';
+        default:
+          return '';
+      }
+    },
+    shouldDisplayInboxTitle(inbox) {
+      if (this.displayedInboxes[inbox]) {
+        return false;
+      }
+
+      this.$set(this.displayedInboxes, inbox, true);
+      return true;
     }
   }
 });

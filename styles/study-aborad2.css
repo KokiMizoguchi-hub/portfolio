@@ -1,0 +1,641 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  background-color: #ffffff;
+  color: #333333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header .report-bar {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 0px 640px 0 600px;
+  margin-top: 65px;
+  position: fixed;
+  color: #ffffff;
+  background-color: #e5972a;
+}
+
+header img {
+  margin: 10px 0 10px 5px;
+}
+
+header .message-buttons-container {
+  margin-left: auto;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+header .message-buttons-container .message-button {
+  padding: 6px 45px;
+  background-color: #173046;
+  color: #fff;
+  border: 1px solid #173046;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #1e4e78 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease-out;
+  font-weight: bold;
+  background-position: right bottom;
+}
+
+header .message-buttons-container .message-button:hover {
+  background-position: left bottom;
+}
+
+header .message-buttons-container .message-button:focus {
+  outline: none;
+}
+
+header .message-buttons-container .message-button-1 {
+  padding: 6px 45px;
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #ffa82b;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #ffa82b 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease-out;
+  font-weight: bold;
+  background-position: right bottom;
+}
+
+header .message-buttons-container .message-button-1:hover {
+  background-position: left bottom;
+}
+
+header .message-buttons-container .message-button-1:focus {
+  outline: none;
+}
+
+.wave-line {
+  width: 100%;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 28"><path fill="none" stroke="black" stroke-width="2" d="M0 14 Q 20 2 40 14 T 80 14 T 120 14" /></svg>');
+  background-repeat: repeat-x;
+}
+
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-menu .hamburger {
+  position: absolute;
+  top: 10px;
+  margin-left: -45px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-menu .menu-items {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hamburger-menu .menu-items a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-image {
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-image img {
+  margin-top: 90px;
+  width: 100%;
+  height: auto;
+}
+
+.main-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 185, 9, 0.153);
+  pointer-events: none;
+}
+
+.container3 {
+  display: flex;
+  align-items: center;
+  margin: 70px 0;
+  margin-left: 100px;
+}
+
+.container3 .information {
+  font-size: 15px;
+  z-index: 2;
+  margin-right: 150px;
+}
+
+.title10 {
+  padding: 20px;
+  background-color: #000;
+  margin-bottom: 500px;
+  margin-top: -50px;
+  margin-right: -400px;
+}
+
+.information p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.information span {
+  color: red;
+}
+
+.tiger2 img {
+  width: 200px;
+  height: 150px;
+  margin-top: 0;
+  transform: rotate(-2deg);
+}
+
+.monkey img {
+  width: 150px;
+  height: 150px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+
+.lion img {
+  width: 250px;
+  height: 200px;
+  margin-top: 30px;
+  margin-left: 800px;
+  margin-bottom: -120px;
+  transform: rotate(8deg);
+}
+
+.elephant img {
+  width: 200px;
+  height: 150px;
+  margin-left: 30px;
+  margin-top: -150px;
+  transform: rotate(-10deg);
+}
+
+
+.important {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin-bottom: 100px;
+  margin-top: 80px;
+}
+
+.important img {
+  height: 300px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.orange-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  background-color: rgb(216, 140, 0);
+  z-index: 1;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.green-box5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  padding-right: 100%;
+  height: 300px;
+  background-color: rgb(29, 159, 3);
+  border-radius: 10px;
+  margin-left: 470px;
+  z-index: 1;
+  margin-top: 70px;
+}
+
+.base-image {
+  position: absolute;
+  top: 50px;
+  /* ボックスに対するオフセットを調整 */
+  left: 50px;
+  /* ボックスに対するオフセットを調整 */
+  width: 500px;
+  /* 画像の幅を指定 */
+  height: 200px;
+  /* 画像の高さを指定 */
+  z-index: 2;
+  /* ボックスの上に重ねるために高い値を設定 */
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin-left: 40px;
+  margin-top: 130px;
+}
+
+.text-container {
+  width: 100%;
+  position: relative;
+}
+
+.text-container .title {
+  z-index: 4;
+  text-align: center;
+  position: relative;
+  margin-left: 400px;
+  margin-bottom: -70px;
+  margin-right: 300px;
+  background: rgba(255, 174, 0, 0.9);
+}
+
+.text-container .title1 {
+  z-index: 4;
+  text-align: center;
+  position: relative;
+  margin-left: 300px;
+  margin-right: 400px;
+  margin-bottom: -70px;
+  background: rgba(255, 174, 0, 0.9);
+}
+
+.text-container .text {
+  margin-left: 400px;
+  margin-bottom: -250px;
+  height: 110px;
+  width: 400px;
+  z-index: 3;
+  position: relative;
+  background: rgb(211, 211, 211);
+  padding: 70px;
+}
+
+.text-container .text1 {
+  margin-right: 400px;
+  margin-bottom: -250px;
+  height: 110px;
+  width: 400px;
+  z-index: 3;
+  position: relative;
+  background: rgb(211, 211, 211);
+  padding: 70px;
+}
+
+.green-box2 {
+  position: absolute;
+  background-color: #00811e;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 400px;
+  margin-top: -50px;
+  margin-left: -30px;
+  z-index: 1;
+}
+
+.orange-box2 {
+  position: absolute;
+  background-color: #c09016;
+  left: 30px;
+  bottom: -50px;
+  width: 400px;
+  height: 250px;
+  z-index: 1;
+}
+
+.green-box3 {
+  position: absolute;
+  background-color: #00811e;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 400px;
+  margin-top: -50px;
+  margin-left: 570px;
+  z-index: 1;
+}
+
+.orange-box3 {
+  position: absolute;
+  background-color: #c09016;
+  margin-left: 510px;
+  bottom: -50px;
+  width: 400px;
+  height: 250px;
+  z-index: 1;
+}
+
+.schoolimage {
+  position: relative;
+  z-index: 2;
+}
+
+.schoolimage img {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  z-index: 2;
+}
+
+.schoolimage1 {
+  position: relative;
+  z-index: 2;
+}
+
+.schoolimage1 img {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin-left: 540px;
+  z-index: 2;
+}
+
+.container2 {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 90px;
+}
+
+.container2 .box10 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container2 .box10 img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.container2 .box10 p {
+  width: 100%;
+  height: 160px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.container2 .green-box {
+  position: absolute;
+  width: 290px;
+  height: 160px;
+  background-color: #019b1f;
+  top: -20px;
+  left: -10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.container2 .orange-box1 {
+  position: absolute;
+  width: 290px;
+  height: 160px;
+  top: 220px;
+  left: 30px;
+  background-color: #d4ac0a;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.container2 .gray-box1 {
+  position: absolute;
+  width: 290px;
+  height: 160px;
+  top: 190px;
+  left: 10px;
+  background-color: #d1d1d1ca;
+  z-index: 1;
+}
+
+.container2 .box10 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.container .box img {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.Questions {
+  display: flex;
+  max-width: 1300px;
+  max-height: 1200px;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.Questions .Frequently-Questions {
+  font-size: 35px;
+  margin-bottom: 60px;
+}
+
+.Questions .Question {
+  font-size: 20px;
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  /* 必要に応じて調整 */
+}
+
+.Questions hr {
+  width: 70%;
+  height: 1px;
+  background-color: #000;
+  margin: 10px 0;
+}
+
+.message-form {
+  margin-top: 100px;
+  padding: 3rem;
+  max-height: 230px;
+  background: #c09016;
+  color: #fff;
+}
+
+.message-form p {
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.message-form .message-form-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.message-form .message-form-bottom .button-style {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.message-form .message-form-bottom .button-style:hover {
+  background-color: #eaeaea;
+  /* ホバー時の背景色を少し暗く */
+  color: #000;
+  /* ホバー時のテキスト色を黒に */
+}
+
+.message-form .message-form-bottom .button-style-1 {
+  background: #38c2de;
+  /* 緑の背景色 */
+}
+
+.message-form .message-form-bottom .button-style-2 {
+  background: #38de59;
+  /* 緑の背景色 */
+}
+
+.message-form .message-form-bottom .button-style-3 {
+  background: #dbf131;
+  /* 黄色の背景色 */
+}
+
+.message-form .message-sub-form {
+  margin: 20px;
+}
+
+.message-form .message-sub-form p {
+  font-size: 15px;
+}
+
+footer {
+  background: #163a5f;
+  color: floralwhite;
+  padding: 20px;
+}
+
+footer .Indo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .Indo-footer .about-Indo,
+footer .Indo-footer .Inquiry,
+footer .Indo-footer .Company-Introduction {
+  flex: 1;
+}
+
+footer .Indo-footer .about-Indo ol,
+footer .Indo-footer .Inquiry ol,
+footer .Indo-footer .Company-Introduction ol {
+  padding-left: 20px;
+}
+
+footer .Indo-footer .about-Indo li,
+footer .Indo-footer .Inquiry li,
+footer .Indo-footer .Company-Introduction li {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

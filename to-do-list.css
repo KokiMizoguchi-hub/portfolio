@@ -90,7 +90,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
 }
 
 .bell-icon,
@@ -220,7 +223,11 @@ body {
 
 .addtasks button {
     border-radius: 15px;
+<<<<<<< HEAD
     width: 25px;
+=======
+    width: 25px;  
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
     height: 25px;
     color: rgb(255, 255, 255);
     background-color: rgb(241, 85, 58);
@@ -249,6 +256,13 @@ body {
     border-bottom-right-radius: 8px;
 }
 
+<<<<<<< HEAD
+=======
+.sometasks h4 {
+    
+}
+
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
 .custom-checkbox {
     display: inline-block;
     position: relative;
@@ -376,7 +390,11 @@ body {
     }
 
     .side-menu-open {
+<<<<<<< HEAD
         left: 0;
+=======
+        left: 0; 
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
     }
 
     .bigbox {
@@ -384,7 +402,11 @@ body {
         transition: margin-left 0.3s ease;
     }
 
+<<<<<<< HEAD
     .side-menu:not(.side-menu-open)~.bigbox {
+=======
+    .side-menu:not(.side-menu-open) ~ .bigbox {
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
         margin-left: 0;
     }
 }
@@ -450,6 +472,7 @@ body {
     background-color: #FF3333;
     border-color: #FF3333;
 }
+<<<<<<< HEAD
 
 .icon-today {
     color: #ff6347;
@@ -505,3 +528,5 @@ body {
 .icon-hobby:hover {
     color: green;
 }
+=======
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0

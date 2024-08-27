@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Abroad Site Homepage</title>
+    <link rel="stylesheet" type="text/css" href="styles/study-abroad.css" />
+    <script
+      src="https://kit.fontawesome.com/657e6a1368.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <div p="⍫⍫TABI-GAKU">⍫⍫TABI-GAKU</div>
+      </div>
+      <div class="menu-item">
+        <span class="sub-text"
+          >For study abroad, TABI-GAKU | The study abroad agent at up to half
+          off</span
+        >
+        <a href="#" class="counseling">Free Counseling</a>
+        <a href="#" class="contact">Contact Us</a>
+      </div>
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#home"><i class="fa-duotone"></i>Contact and Map</a>
+        </li>
+        <li>
+          <a href="#services"
+            ><i class="icon icon-services"></i>Pricing System</a
+          >
+        </li>
+        <li>
+          <a href="#portfolio"
+            ><i class="icon icon-portfolio"></i>Car Diagnosis</a
+          >
+        </li>
+        <li>
+          <a href="#about"><i class="icon icon-about"></i>Choose by Car</a>
+        </li>
+        <!---->
+        <li>
+          <a href="#contact"><i class="icon icon-contact"></i>Support</a>
+        </li>
+        <!---->
+        <li>
+          <a href="#blog"><i class="icon icon-blog"></i>Pricing Table</a>
+        </li>
+        <li>
+          <a href="#features"
+            ><i class="icon icon-features"></i>Pricing Program</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="announcement-banner">
+      Announcement: We are holding online study abroad seminars that are easy to
+      participate in from anywhere at any time!
+    </div>
+    <div class="overlay-container">
+      <img images src="images/38.jpg" alt="kid" />
+    </div>
+    <div class="CAMPAIGN">
+      <h1>CAMPAIGN</h1>
+      <h4>Attractive Study Abroad Campaign Information</h4>
+    </div>
+    <div class="view-pictures">
+      <div class="view-picture">
+        <!-- Add images -->
+        <div class="pic1" id="slide1">
+          <img src="images/pexels-kobeboy-1516440.jpg" alt="Working Holiday" />
+          <p class="caption"></p>
+        </div>
+        <div class="pic1" id="slide2">
+          <img src="images/2147657126.jpg" alt="Study Abroad" />
+          <p class="caption"></p>
+        </div>
+        <div class="pic1" id="slide3">
+          <img
+            src="images/pexels-kat-wilcox-329096-923657.jpg"
+            alt="Group Study"
+          />
+          <p class="caption"></p>
+        </div>
+        <div class="pic1" id="slide4">
+          <img src="images/2148883937.jpg" alt="Group Study" />
+          <p class="caption"></p>
+        </div>
+        <div class="pic1" id="slide5">
+          <img src="images/2148140789.jpg" alt="Group Study" />
+          <p class="caption"></p>
+        </div>
+        <div class="pic1" id="slide6">
+          <img src="images/2149107677.jpg" alt="Group Study" />
+          <p class="caption"></p>
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="images/13470.jpg" alt="Image 1" />
+      <img src="images/15908.jpg" alt="Image 2" />
+      <img src="images/2148115708.jpg" alt="Image 3" />
+      <img src="images/2149494884.jpg" alt="Image 4" />
+    </div>
+    <div class="price-simulation-container">
+      <h1>PRICE SIMULATION</h1>
+      <p class="pdesu">Specialized Planning Consultation</p>
+      <p>
+        Avoid misunderstanding the complexity of smartphone pricing systems!
+      </p>
+      <p>—— Check the simple estimate now ——</p>
+    </div>
+    <div class="form-container">
+      <div class="gray-box">
+        <form id="priceSimulationForm">
+          <div class="question">
+            <label for="question1"
+              >Q1 | Which country do you want to buy from?</label
+            >
+            <select id="question1" name="country">
+              <option value="init">Please select a country</option>
+              <option value="japan">Japan</option>
+              <option value="usa">USA</option>
+              <!-- Add other options -->
+            </select>
+            <div class="question">
+              <label for="question2"
+                >Q2 | How long do you want to buy for?</label
+              >
+              <select id="question2" name="duration">
+                <option value="init">Please select a duration</option>
+                <option value="short">Short term</option>
+                <option value="long">Long term</option>
+                <!-- Add other options -->
+              </select>
+            </div>
+          </div>
+          <button type="button" onclick="submitForm()">
+            Calculate the purchase estimate
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item special-item">
+        <img src="images/19073.jpg" alt="Long Term" />
+        <span class="timeline-text">Long-term Learning</span>
+      </div>
+      <div class="timeline-item">
+        <img src="images/pexels-pixabay-267885.jpg" alt="Junior" />
+        <span class="timeline-text">Junior High and High School Studies</span>
+      </div>
+      <div class="timeline-item">
+        <img src="images/49721.jpg" alt="Parent & Child" />
+        <span class="timeline-text">Parent and Child Learning</span>
+      </div>
+    </div>
+    <div class="call-to-action-2">
+      <h2>Easy Online Consultations Available Now!</h2>
+      <div class="buttons-2">
+        <button class="orange-button-3">Book Free Counseling</button>
+        <button class="green-button-3">
+          Consult & Request Information via LINE
+        </button>
+      </div>
+    </div>
+    <div class="about-abord-website">
+      <h1>About TABI-GAKU</h1>
+      <p>About the study abroad agency "Travel Study"</p>
+      <div class="about-abord-website-item">
+        <span class="about-thiswesite"
+          >Advocates for the transformative power of international education. it
+          operates under the philosophy tha each additional person who studies
+          abroad can help illuminate Japan`future. Offering study experiences
+          that reduced costs and with minimal time commitment, "Travel and
+          Learn" facilitates easier access to global learning opportunities.
+          They present clear, predefined packages for various countries and
+          durations to ensure a hassle-free planning process.</span
+        >
+      </div>
+    </div>
+    <div class="container-1">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="images/pexels-olly-3769021.jpg" alt="PRICE PLAN" />
+        <div class="card-content">REASONS A Reasoned Choice</div>
+        <div class="arrow">→</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img
+          src="images/pexels-maitree-rimthong-444156-1602726.jpg"
+          alt="PRICE About the Price"
+        />
+        <div class="card-content">PRICE About the Price</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <div class="container-1">
+      <div class="card">
+        <img
+          src="images/pexels-nastyasensei-66707-335393.jpg"
+          alt="COUNTRY Choose by Country"
+        />
+        <div class="card-content">COUNTRY Choose by Country</div>
+        <div class="arrow">→</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img
+          src="images/pexels-olly-3823488.jpg"
+          alt="SUPPORT Support & Safety"
+        />
+        <div class="card-content">SUPPORT Support & Safety</div>
+        <div class="arrow">→</div>
+      </div>
+    </div>
+    <div class="background-image">
+      <div class="overlay-text">COUNSELING SALON</div>
+      <h4>Study Abroad Counseling Salon</h4>
+      <p>
+        All of TABI-GAKU counselors are experienced in studying abroad, so feel
+        free to consult us about anything. Of course, all consultations are
+        free! "I'm interested but I don't understand well..." Please feel free
+        to visit us even if you feel this way.
+      </p>
+      <div class="overlay-image">
+        <div class="overlay-image-1">
+          <img src="images/officepic1.jpg" alt="SUPPORT Support & Safety" />
+        </div>
+        <div class="overlay-image-2">
+          <img
+            src="images/pexels-janetrangdoan-102424800000000.jpg"
+            alt="SUPPORT Support & Safety"
+          />
+        </div>
+        <div class="overlay-image-3">
+          <img src="images/officepic2.jpg" alt="SUPPORT Support & Safety" />
+        </div>
+      </div>
+      <div class="text-overlay">Free Counseling Available</div>
+      <div class="buttons-container">
+        <button class="button-6">Tokyo</button>
+        <button class="button-6">Online</button>
+      </div>
+    </div>
+
+    <div class="banner3">
+      <div class="text-container">
+        <div class="text-large">More Casually</div>
+        <div class="text-large">Easy Consultation via LINE</div>
+        <div class="text-small">Try consulting more casually via LINE!</div>
+        <div class="text-small">We're also accepting inquiries via LINE.</div>
+        <div class="text-small">
+          Feel free to consult about anything, easily.
+        </div>
+      </div>
+      <button class="button-green">Try an Easy Consultation via LINE</button>
+    </div>
+    <div class="testimonial-section">
+      <h2 class="section-title">VOICE</h2>
+      <h3 class="section-subtitle">Study Abroad Testimonials</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img
+            src="images/pexels-yankrukov-8199169.jpg"
+            alt="TABI-GAKU RESIDENCE group photo of students"
+          />
+          <p class="name-tag">
+            【TABI-BAKU RESIDENCE】I truly felt that studying abroad is not just
+            about learning English.
+          </p>
+          <p>John Anderson</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="images/pexels-ivan-samkov-5429021.jpg"
+            alt="Photo of Arkindam Theme Park"
+          />
+          <p class="name-tag">
+            【Arkindam Theme Park】Interacting with various people broadened my
+            horizons!
+          </p>
+          <p>Emily Smith</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="images/pexels-ron-lach-9974658.jpg"
+            alt="TABI-GAKU RESIDENCE nighttime photo"
+          />
+          <p class="name-tag">
+            【TABI-GAKU RESIDENCE】Studying abroad made me realize the fun of
+            nights out
+          </p>
+          <p>Michael Johnson</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="images/pexels-polina-tankilevitch-5973290.jpg"
+            alt="Image 1 Description"
+          />
+          <p class="tag">
+            【With Corona】Studying abroad allowed me to change my outlook on
+            life by 180 degrees
+          </p>
+          <p>Sarah Williams</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="images/pexels-mentalhealthamerica-5543191.jpg"
+            alt="Image 2 Description"
+          />
+          <p class="tag">
+            Studying abroad made me proud to have been born Japanese!
+          </p>
+          <p>David Brown</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="images/pexels-cottonbro-4874535.jpg"
+            alt="Image 3 Description"
+          />
+          <p class="tag">
+            【TABI-GAKU RESIDENCE】No matter your age, you can always try
+            something new!
+          </p>
+          <p>Jessica Taylor</p>
+        </div>
+      </div>
+      <div class="button-9">View All Testimonials</div>
+    </div>
+    <div class="call-to-action-1">
+      <h2>Easy Online Consultations Available Now!</h2>
+      <div class="buttons-2">
+        <button class="orange-button-3">Book Free Counseling</button>
+        <button class="green-button-3">
+          Consult & Request Information via LINE
+        </button>
+      </div>
+    </div>
+    <div class="banner2">
+      <div class="top-text">
+        For any other inquiries, please feel free to contact us
+      </div>
+      <div class="button-container">
+        <button class="icon-button download-button">Download Materials</button>
+      </div>
+      <div class="main-button-container">
+        <button class="main-button">
+          Click here for free guidance on TABIGAKU services application
+        </button>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h6>Home</h6>
+          <ul>
+            <li>Contact and Map</li>
+            <li>Inspection Lab</li>
+            <li>Car Diagnostics</li>
+            <li>Support</li>
+            <li>Repair and Warranty</li>
+            <li>Emergency Program</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h6>Car Diagnostics</h6>
+          <ul>
+            <li>Diagnostic Learning</li>
+            <li>On-board Diagnostics</li>
+            <li>Post Diagnostics</li>
+            <li>Direct Diagnostics</li>
+            <li>Engine Diagnostics</li>
+            <li>Multi-system Diagnostics</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h6>Watchlist</h6>
+          <ul>
+            <li>Auto Stream Analysis</li>
+            <li>New Generation</li>
+            <li>Canada Navigation</li>
+            <li>UK Analysis</li>
+            <li>Ireland Analysis</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h6>Purpose & Details and Establishment</h6>
+          <ul>
+            <li>Organizational Philosophy</li>
+            <li>Recruitment Information</li>
+            <li>Sponsoring Companies</li>
+            <li>Mikazuki Society</li>
+            <li>Research Programs</li>
+            <li>Adult Education</li>
+            <li>Seniors</li>
+          </ul>
+        </div>
+        <div class="footer-icons">
+          <a href="#"><img src="icon-circle.png" alt="Icon" /></a>
+          <a href="#"><img src="icon-play.png" alt="Play" /></a>
+          <a href="#"><img src="icon-music.png" alt="Music" /></a>
+          <a href="#"><img src="icon-close.png" alt="Close" /></a>
+          <a href="#"><img src="icon-facebook.png" alt="Facebook" /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts/study-abroad.js"></script>
+  </body>
+</html>

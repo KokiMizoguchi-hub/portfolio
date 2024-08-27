@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="to-do-list.css" />
+<<<<<<< HEAD
     <script
       src="https://kit.fontawesome.com/657e6a1368.js"
       crossorigin="anonymous"
     ></script>
+=======
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
     <title>To-Do List</title>
   </head>
   <body>
@@ -16,10 +19,14 @@
         <div class="hamburger-menu" @click="toggleSideMenu">
           <i class="fas fa-bars"></i>
         </div>
+<<<<<<< HEAD
         <div
           class="side-menu"
           v-bind:class="{ 'side-menu-open': isSideMenuOpen }"
         >
+=======
+        <div class="side-menu" v-bind:class="{ 'side-menu-open': isSideMenuOpen }">
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
           <div class="profile-section">
             <i class="fas fa-user-circle" id="avatar-icon"></i>
             <span class="user-name">溝口さん</span>
@@ -41,6 +48,7 @@
         <div class="bigbox">
           <h2>今日</h2>
           <div class="sometasks">
+<<<<<<< HEAD
             <div v-for="(task, index) in filteredTasks('today')" :key="index">
               <!-- インボックスごとに見出しを表示 -->
               <h4 v-if="displayedInboxes[task.inbox] !== index">
@@ -69,6 +77,29 @@
           <div class="addtasks">
             <button @click="toggleTaskForm">＋</button>
             <p @click="toggleTaskForm">タスクを追加</p>
+=======
+            <div
+              v-for="(task, index) in filteredTasks('today')"
+               :class="['task', { done: task.done }]"
+            >
+              <label class="custom-checkbox">
+                <input type="checkbox" v-model="task.done" />
+                <span :class="['checkmark', getCheckmarkColor(task.priority)]"></span>
+              </label>
+              <span :class="['example-text', { 'task-done': task.done }]">{{ task.text }}</span>
+              <p>{{ task.description }}</p>
+              <p class="task-time">#{{ task.time }}</p>
+              <button class="removetask" @click="removeTask(index, 'today')">✖</button>
+              <h4>{{ getInboxTitle(task.inbox) }}</h4>
+            </div>
+          </div>
+          
+          <div class="addtasks">
+            <button @click="toggleTaskForm">＋</button>
+            <p @click="toggleTaskForm">
+              タスクを追加
+            </p>
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
           </div>
 
           <div v-if="showTaskForm" class="task-form">
@@ -112,7 +143,11 @@
                 <option value="personal">個人</option>
                 <option value="work">仕事</option>
                 <option value="study">学習</option>
+<<<<<<< HEAD
                 <option value="hobby">趣味</option>
+=======
+                <option value="hoppy">趣味</option>
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
               </select>
             </div>
 
@@ -126,7 +161,14 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
 
+=======
+    <script
+      src="https://kit.fontawesome.com/657e6a1368.js"
+      crossorigin="anonymous"
+    ></script>
+>>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="to-do-list.js"></script>
   </body>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/657e6a1368.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>To-Do List</title>
+  </head>
+  <body style="font-family: Arial, sans-serif">
+    <div id="app">
+      <div class="screen" style="display: flex; justify-self: center">
+        <div
+          class="hamburger-menu"
+          @click="toggleSideMenu"
+          style="
+            display: block;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            z-index: 1100;
+          "
+        >
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <div
+          class="side-menu"
+          :class="{ 'side-menu-open': isSideMenuOpen }"
+          style="
+            float: left;
+            width: 20%;
+            height: 600px;
+            background-color: rgb(199, 199, 199);
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+          "
+        >
+          <div
+            class="profile-section"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 20px;
+            "
+          >
+            <i
+              class="fas fa-user-circle"
+              id="avatar-icon"
+              style="font-size: 24px; margin: 8px 0 0 8px; color: #ccc"
+            ></i>
+            <span
+              class="user-name"
+              style="font-size: 13px; font-weight: 600; margin: 8px 80px 0 0"
+              >溝口さん</span
+            >
+            <i
+              class="fas fa-bell bell-icon"
+              @click="toggleNotifications"
+              style="margin-right: 10px; margin-top: 9px; color: #000000"
+            ></i>
+            <i
+              class="fas fa-columns close-icon"
+              @click="closeSideMenu"
+              style="margin-right: 10px; margin-top: 9px; color: #000000"
+            ></i>
+          </div>
+
+          <div
+            v-for="category in categories"
+            :key="category"
+            class="task-category"
+            style="width: auto; height: 24px; padding-bottom: 9px"
+          >
+            <p
+              class="category-item"
+              style="
+                font-size: 16px;
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                color: #adadad;
+              "
+            >
+              <a
+                :href="getCategoryLink(category)"
+                class="category-link"
+                style="text-decoration: none; color: inherit"
+              >
+                <i
+                  :class="getCategoryIcon(category)"
+                  class="category-icon"
+                  style="
+                    margin-right: 10px;
+                    font-size: 20px;
+                    color: #000;
+                    transition: color 0.3s ease;
+                  "
+                ></i>
+                <span
+                  class="category-text"
+                  style="font-weight: bold; color: #666"
+                >
+                  {{ category }} ({{ getCategoryCount(category) }})
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bigbox"
+          style="
+            width: 95%;
+            height: 400px;
+            float: right;
+            background-color: rgb(255, 255, 255);
+            margin-left: 260px;
+            transition: margin-left 0.3s ease;
+          "
+        >
+          <h2 style="margin: 60px 0 0 40px">今日</h2>
+
+          <div
+            v-if="showNotifications"
+            class="notification-bubble"
+            style="
+              position: absolute;
+              top: 40px;
+              right: 10px;
+              background-color: #fff;
+              border-radius: 10px;
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              padding: 10px;
+              width: 250px;
+              z-index: 1000;
+              display: none;
+            "
+          >
+            <ul style="list-style-type: none; margin: 0; padding: 0">
+              <li
+                v-for="(notification, index) in notifications"
+                :key="index"
+                style="
+                  margin-bottom: 10px;
+                  padding: 5px 10px;
+                  background-color: #f1f1f1;
+                  border-radius: 5px;
+                "
+              >
+                {{ notification }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="sometasks">
+            <div v-for="(tasks, inbox) in groupedTasks" :key="inbox">
+              <h4 style="margin: 40px 0 3px 40px">
+                {{ getInboxTitle(inbox) }}
+              </h4>
+              <div
+                v-for="(task, index) in tasks"
+                :key="index"
+                :class="['task', { done: task.done }]"
+                style="
+                  display: flex;
+                  align-items: center;
+                  border-top: 2px solid #ccc;
+                  border-bottom: 2px solid #ccc;
+                  margin-bottom: 10px;
+                  background-color: #f9f9f9;
+                  border-radius: 8px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <label
+                  class="custom-checkbox"
+                  style="
+                    display: inline-block;
+                    position: relative;
+                    padding-left: 30px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    font-size: 22px;
+                  "
+                >
+                  <input
+                    type="checkbox"
+                    v-model="task.done"
+                    style="
+                      position: absolute;
+                      opacity: 0;
+                      cursor: pointer;
+                      height: 0;
+                      width: 0;
+                    "
+                  />
+                  <span
+                    :class="['checkmark', getCheckmarkColor(task.priority)]"
+                    style="
+                      position: absolute;
+                      bottom: -11px;
+                      left: 26px;
+                      height: 20px;
+                      width: 20px;
+                      background-color: #e9e9e9;
+                      border-radius: 50%;
+                      border: 2px solid rgb(0, 0, 255);
+                    "
+                  ></span>
+                </label>
+                <span
+                  :class="['example-text', { 'task-done': task.done }]"
+                  style="margin-left: 15px"
+                >
+                  {{ task.text }}
+                </span>
+                <p>{{ task.description }}</p>
+                <p
+                  class="task-time"
+                  v-if="task.time"
+                  style="color: green; margin-left: 8px"
+                >
+                  #{{ task.time }}
+                </p>
+                <button
+                  class="removetask"
+                  @click="removeTask(task)"
+                  style="position: absolute; margin-left: 60%"
+                >
+                  ✖
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="addtasks" style="margin-bottom: 100px">
+            <button
+              @click="toggleTaskForm"
+              style="
+                border-radius: 15px;
+                margin-right: 2px;
+                width: 28px;
+                height: 28px;
+                color: rgb(255, 255, 255);
+                background-color: rgb(241, 85, 58);
+                float: left;
+                margin-left: 6px;
+                border: none;
+              "
+            >
+              ＋
+            </button>
+            <p
+              @click="toggleTaskForm"
+              style="color: #000000; padding: 2px 0 0 10px"
+            >
+              タスクを追加
+            </p>
+          </div>
+          <div
+            v-if="showTaskForm"
+            class="task-form"
+            style="
+              width: 400px;
+              margin: 0 auto;
+              padding: 20px;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+              background-color: #f9f9f9;
+            "
+          >
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                for="taskName"
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >タスク名</label
+              >
+              <input
+                type="text"
+                id="taskName"
+                v-model="taskName"
+                placeholder="タスク名を入力"
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid rgb(241, 85, 58);
+                "
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                for="taskDescription"
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >説明</label
+              >
+              <textarea
+                id="taskDescription"
+                v-model="taskDescription"
+                placeholder="説明を入力"
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid rgb(241, 85, 58);
+                "
+              ></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                for="taskPriority"
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >優先順位</label
+              >
+              <select
+                id="taskPriority"
+                v-model="taskPriority"
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid rgb(241, 85, 58);
+                "
+              >
+                <option
+                  value="low"
+                  class="low"
+                  style="color: rgb(9, 0, 139); font-weight: 550"
+                >
+                  低
+                </option>
+                <option
+                  value="medium"
+                  class="medium"
+                  style="color: rgb(199, 224, 3); font-weight: 550"
+                >
+                  中
+                </option>
+                <option
+                  value="high"
+                  class="high"
+                  style="color: red; font-weight: 550"
+                >
+                  高
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                for="taskTime"
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >リマインダー時間</label
+              >
+              <input
+                type="time"
+                id="taskTime"
+                v-model="taskTime"
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid rgb(241, 85, 58);
+                "
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                for="taskInbox"
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >インボックス</label
+              >
+              <select
+                id="taskInbox"
+                v-model="taskInbox"
+                style="
+                  width: 100%;
+                  padding: 8px;
+                  border: 1px solid rgb(241, 85, 58);
+                "
+              >
+                <option value="inbox">インボックス</option>
+                <option value="personal">個人</option>
+                <option value="work">仕事</option>
+                <option value="study">学習</option>
+                <option value="hobby">趣味</option>
+              </select>
+            </div>
+
+            <div
+              class="form-actions"
+              style="display: flex; justify-content: space-between"
+            >
+              <button @click="cancelTask">キャンセル</button>
+              <button
+                @click="addDetailedTask"
+                class="add-task"
+                style="
+                  background-color: rgb(241, 85, 58);
+                  color: #fff;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                "
+              >
+                タスクを追加
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            isSideMenuOpen: false,
+            showTaskForm: false,
+            showNotifications: false,
+            taskName: "",
+            taskDescription: "",
+            taskPriority: "low",
+            taskTime: "",
+            taskInbox: "inbox",
+            categories: [
+              "今日の予定",
+              "明日の予定",
+              "今週の予定",
+              "今月の予定",
+              "来月の予定",
+              "予定なし",
+              "インボックス",
+              "仕事",
+              "学習",
+              "個人",
+              "趣味",
+            ],
+            tasks: [
+              {
+                text: "例: タスク 1",
+                time: "10:00",
+                category: "今日の予定",
+                done: false,
+                priority: "low",
+                inbox: "inbox",
+              },
+              {
+                text: "例: タスク 2",
+                time: "12:00",
+                category: "今日の予定",
+                done: false,
+                priority: "medium",
+                inbox: "personal",
+              },
+            ],
+            visibleCategories: ["inbox", "personal"],
+            notifications: [
+              "新しいタスクが追加されました。",
+              "今日の予定があります。",
+            ],
+          };
+        },
+        computed: {
+          groupedTasks() {
+            const grouped = {};
+            const todayTasks = this.tasks.filter(
+              (task) => task.category === "今日の予定"
+            );
+            todayTasks.forEach((task) => {
+              if (this.visibleCategories.includes(task.inbox)) {
+                if (!grouped[task.inbox]) {
+                  grouped[task.inbox] = [];
+                }
+                grouped[task.inbox].push(task);
+              }
+            });
+            return grouped;
+          },
+        },
+        methods: {
+          toggleSideMenu() {
+            this.isSideMenuOpen = !this.isSideMenuOpen;
+
+            const hamburgerMenu = document.querySelector(".hamburger-menu");
+            if (this.isSideMenuOpen) {
+              hamburgerMenu.style.display = "none";
+            } else {
+              hamburgerMenu.style.display = "block";
+            }
+          },
+          closeSideMenu() {
+            this.isSideMenuOpen = false;
+
+            const hamburgerMenu = document.querySelector(".hamburger-menu");
+            hamburgerMenu.style.display = "block";
+          },
+          toggleTaskForm() {
+            this.showTaskForm = !this.showTaskForm;
+          },
+          addDetailedTask() {
+            if (this.taskName.trim() === "") {
+              alert("タスク名を入力してください");
+              return;
+            }
+
+            const newTask = {
+              text: this.taskName,
+              description: this.taskDescription,
+              priority: this.taskPriority,
+              time: this.taskTime,
+              inbox: this.taskInbox,
+              category: "今日の予定",
+              done: false,
+            };
+
+            this.tasks.push(newTask);
+
+            if (!this.visibleCategories.includes(this.taskInbox)) {
+              this.visibleCategories.push(this.taskInbox);
+            }
+
+            this.taskName = "";
+            this.taskDescription = "";
+            this.taskPriority = "low";
+            this.taskTime = "";
+            this.taskInbox = "inbox";
+            this.showTaskForm = false;
+
+            this.addNotification("新しいタスクが追加されました。");
+          },
+          removeTask(taskToRemove) {
+            this.tasks = this.tasks.filter((task) => task !== taskToRemove);
+          },
+          getCheckmarkColor(priority) {
+            switch (priority) {
+              case "low":
+                return "checkmark-blue";
+              case "medium":
+                return "checkmark-yellow";
+              case "high":
+                return "checkmark-red";
+              default:
+                return "";
+            }
+          },
+          getCategoryIcon(category) {
+            switch (category) {
+              case "今日の予定":
+                return "fas fa-calendar-day icon-today";
+              case "明日の予定":
+                return "fas fa-calendar-alt icon-tomorrow";
+              case "今週の予定":
+                return "fas fa-calendar-week icon-this-week";
+              case "今月の予定":
+                return "fas fa-calendar icon-this-month";
+              case "来月の予定":
+                return "fas fa-calendar-plus icon-next-month";
+              case "予定なし":
+                return "fas fa-calendar-times icon-no-schedule";
+              case "インボックス":
+                return "fas fa-inbox icon-inbox";
+              case "個人":
+                return "fas fa-user icon-personal";
+              case "仕事":
+                return "fas fa-briefcase icon-work";
+              case "学習":
+                return "fas fa-book icon-study";
+              case "趣味":
+                return "fas fa-heart icon-hobby";
+              default:
+                return "";
+            }
+          },
+          getCategoryCount(category) {
+            if (category === "今日の予定") {
+              return this.tasks.filter((task) => task.category === category)
+                .length;
+            } else {
+              return this.tasks.filter(
+                (task) => this.getInboxTitle(task.inbox) === category
+              ).length;
+            }
+          },
+          getInboxTitle(inbox) {
+            switch (inbox) {
+              case "inbox":
+                return "インボックス";
+              case "personal":
+                return "個人";
+              case "work":
+                return "仕事";
+              case "study":
+                return "学習";
+              case "hobby":
+                return "趣味";
+              default:
+                return "";
+            }
+          },
+          getCategoryLink(category) {
+            switch (category) {
+              case "今日の予定":
+                return "to-do-list.html";
+              case "明日の予定":
+                return "tomorrow-list.html";
+              case "今週の予定":
+                return "week-list.html";
+              case "今月の予定":
+                return "thismonth-list.html";
+              case "来月の予定":
+                return "nextmonth-list.html";
+              case "予定なし":
+                return "nothing-list.html";
+              default:
+                return "#";
+            }
+          },
+          cancelTask() {
+            this.taskName = "";
+            this.taskDescription = "";
+            this.taskPriority = "low";
+            this.taskTime = "";
+            this.taskInbox = "inbox";
+            this.showTaskForm = false;
+          },
+          toggleNotifications() {
+            this.showNotifications = !this.showNotifications;
+
+            const notificationBubble = document.querySelector(
+              ".notification-bubble"
+            );
+            if (this.showNotifications) {
+              notificationBubble.classList.add("active");
+            } else {
+              notificationBubble.classList.remove("active");
+            }
+          },
+          addNotification(message) {
+            this.notifications.push(message);
+            this.showNotifications = true;
+
+            setTimeout(() => {
+              this.showNotifications = false;
+            }, 5000);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

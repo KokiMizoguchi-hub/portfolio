@@ -174,5 +174,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   window.addEventListener('scroll', checkVisibility);
-  checkVisibility(); // 初期チェック
+  checkVisibility();
 });

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="to-do-list.css" />
+    <script
+      src="https://kit.fontawesome.com/657e6a1368.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="screen">
+        <div class="hamburger-menu" @click="toggleSideMenu">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="side-menu" :class="{ 'side-menu-open': isSideMenuOpen }">
+          <div class="profile-section">
+            <i class="fas fa-user-circle" id="avatar-icon"></i>
+            <span class="user-name">溝口さん</span>
+            <i class="fas fa-bell bell-icon" @click="toggleNotifications"></i>
+            <i class="fas fa-columns close-icon" @click="closeSideMenu"></i>
+          </div>
+
+          <div
+            v-for="category in categories"
+            :key="category"
+            class="task-category"
+          >
+            <p class="category-item">
+              <a :href="getCategoryLink(category)" class="category-link">
+                <i :class="getCategoryIcon(category)" class="category-icon"></i>
+                <span class="category-text">
+                  {{ category }} ({{ getCategoryCount(category) }})
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="bigbox">
+          <h2>今日</h2>
+
+          <!-- 通知の吹き出しエリア -->
+          <div v-if="showNotifications" class="notification-bubble">
+            <ul>
+              <li v-for="(notification, index) in notifications" :key="index">
+                {{ notification }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="sometasks">
+            <div v-for="(tasks, inbox) in groupedTasks" :key="inbox">
+              <h4>{{ getInboxTitle(inbox) }}</h4>
+              <div
+                v-for="(task, index) in tasks"
+                :key="index"
+                :class="['task', { done: task.done }]"
+              >
+                <label class="custom-checkbox">
+                  <input type="checkbox" v-model="task.done" />
+                  <span
+                    :class="['checkmark', getCheckmarkColor(task.priority)]"
+                  ></span>
+                </label>
+                <span :class="['example-text', { 'task-done': task.done }]">
+                  {{ task.text }}
+                </span>
+                <p>{{ task.description }}</p>
+                <p class="task-time" v-if="task.time">#{{ task.time }}</p>
+                <button class="removetask" @click="removeTask(task)">✖</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="addtasks">
+            <button @click="toggleTaskForm">＋</button>
+            <p @click="toggleTaskForm">タスクを追加</p>
+          </div>
+          <div v-if="showTaskForm" class="task-form">
+            <div class="form-group">
+              <label for="taskName">タスク名</label>
+              <input
+                type="text"
+                id="taskName"
+                v-model="taskName"
+                placeholder="タスク名を入力"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="taskDescription">説明</label>
+              <textarea
+                id="taskDescription"
+                v-model="taskDescription"
+                placeholder="説明を入力"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="taskPriority">優先順位</label>
+              <select id="taskPriority" v-model="taskPriority">
+                <option value="low" class="low">低</option>
+                <option value="medium" class="medium">中</option>
+                <option value="high" class="high">高</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="taskTime">リマインダー時間</label>
+              <input type="time" id="taskTime" v-model="taskTime" />
+            </div>
+
+            <div class="form-group">
+              <label for="taskInbox">インボックス</label>
+              <select id="taskInbox" v-model="taskInbox">
+                <option value="inbox">インボックス</option>
+                <option value="personal">個人</option>
+                <option value="work">仕事</option>
+                <option value="study">学習</option>
+                <option value="hobby">趣味</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button @click="cancelTask">キャンセル</button>
+              <button @click="addDetailedTask" class="add-task">
+                タスクを追加
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="to-do-list.js"></script>
+  </body>
+</html>

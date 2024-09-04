@@ -12,6 +12,11 @@ body {
     padding-bottom: 9px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .removetask {
     position: absolute;
     margin-left: 60%;
@@ -20,7 +25,7 @@ body {
 
 .task-time {
     color: green;
-    margin-left: 8px;
+    margin-right: 25px;
 }
 
 
@@ -38,6 +43,7 @@ body {
     font-size: 24px;
     margin-right: 10px;
     margin-left: 10px;
+    margin-top: 5px;
     padding-bottom: 9px;
     color: rgb(241, 85, 58);
 }
@@ -90,10 +96,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-<<<<<<< HEAD
     margin-bottom: 20px;
-=======
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
 }
 
 .bell-icon,
@@ -128,7 +131,6 @@ body {
     width: 0;
 }
 
-
 .task-form {
     width: 400px;
     margin: 0 auto;
@@ -154,6 +156,23 @@ body {
     width: 100%;
     padding: 8px;
     border: 1px solid rgb(241, 85, 58)
+}
+
+.low {
+    color: rgb(9, 0, 139);
+    font-weight: 550;
+}
+
+.medium {
+    color: rgb(199, 224, 3);
+    font-weight: 550;
+
+}
+
+.high {
+    color: red;
+    font-weight: 550;
+
 }
 
 .form-actions {
@@ -221,14 +240,24 @@ body {
     background: white;
 }
 
+addtasks {
+    margin-bottom: 100px;
+}
+
+.addtasks p {
+    color: #000000;
+    padding: 2px 0 0 10px;
+}
+
+.addtasks:hover {
+    background-color: rgb(209, 209, 209);
+}
+
 .addtasks button {
     border-radius: 15px;
-<<<<<<< HEAD
-    width: 25px;
-=======
-    width: 25px;  
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
-    height: 25px;
+    margin-right: 2px;
+    width: 28px;
+    height: 28px;
     color: rgb(255, 255, 255);
     background-color: rgb(241, 85, 58);
     float: left;
@@ -256,13 +285,6 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-<<<<<<< HEAD
-=======
-.sometasks h4 {
-    
-}
-
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
 .custom-checkbox {
     display: inline-block;
     position: relative;
@@ -298,17 +320,6 @@ body {
 
 .task-done {
     text-decoration: line-through;
-}
-
-
-.addtasks p {
-    color: #000000;
-    font-weight: 540;
-    margin: 0 0 3px 34px;
-}
-
-.addtasks:hover {
-    background-color: rgb(209, 209, 209);
 }
 
 .today-category {
@@ -390,11 +401,7 @@ body {
     }
 
     .side-menu-open {
-<<<<<<< HEAD
         left: 0;
-=======
-        left: 0; 
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
     }
 
     .bigbox {
@@ -402,11 +409,7 @@ body {
         transition: margin-left 0.3s ease;
     }
 
-<<<<<<< HEAD
     .side-menu:not(.side-menu-open)~.bigbox {
-=======
-    .side-menu:not(.side-menu-open) ~ .bigbox {
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
         margin-left: 0;
     }
 }
@@ -472,7 +475,6 @@ body {
     background-color: #FF3333;
     border-color: #FF3333;
 }
-<<<<<<< HEAD
 
 .icon-today {
     color: #ff6347;
@@ -489,6 +491,10 @@ body {
     /* 今週の予定 */
 }
 
+.icon-this-month {
+    color: #009b24;
+}
+
 .icon-next-month {
     color: #ffa500;
     /* 来月の予定 */
@@ -496,30 +502,32 @@ body {
 
 .icon-no-schedule {
     color: #808080;
-    /* 予定なし */
+}
+
+.icon-inbox {
+    color: #ff9c07 !important;
+    margin-top: 15px !important;
 }
 
 .icon-work {
-    color: #00008b !important;
-    margin-top: 10px;
-    transition: color 0.3s ease;
+    color: #0000b5 !important;
+    margin-top: 12px !important;
 }
-
 
 .icon-study {
     color: #8a2be2 !important;
-    margin-top: 10px;
+    margin-top: 13px !important;
 }
 
 .icon-personal {
     color: #ff1493 !important;
-    margin-top: 10px;
+    margin-top: 13px !important;
 
 }
 
 .icon-hobby {
-    color: #ff4500 !important;
-    margin-top: 10px;
+    color: #009b24 !important;
+    margin-top: 13px !important;
 }
 
 .icon-work:hover,
@@ -528,5 +536,88 @@ body {
 .icon-hobby:hover {
     color: green;
 }
-=======
->>>>>>> 0fa2d4e10f0432c7096339a7dc2e68270d7d16e0
+
+/* pタグのスタイル */
+.category-item {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    color: #adadad;
+}
+
+/* iタグのスタイル */
+.category-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+/* テキスト部分のスタイル */
+.category-text {
+    font-weight: bold;
+    color: #666;
+}
+
+/* アイコンにホバーしたときの色変更 */
+.category-icon:hover {
+    color: #ff4500;
+    /* オレンジ色に変更 */
+}
+
+/* pタグ全体にホバーしたときの背景色変更 */
+.category-item:hover {
+    background-color: #e0e0e0;
+}
+
+.notification-bubble {
+    position: absolute;
+    top: 40px;
+    /* アイコンの下に配置 */
+    right: 10px;
+    /* 右端に配置 */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 250px;
+    z-index: 1000;
+    display: none;
+}
+
+.notification-bubble.active {
+    display: block;
+}
+
+.notification-bubble ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.notification-bubble li {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.notification-bubble li:last-child {
+    margin-bottom: 0;
+}
+
+.bell-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-bubble::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}

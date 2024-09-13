@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/657e6a1368.js"
+      crossorigin="anonymous"
+    ></script>
     <title>To-Do List</title>
     <style>
       body {
@@ -19,14 +23,34 @@
         padding-bottom: 9px;
       }
 
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
       .removetask {
         position: absolute;
-        margin-left: 60%;
+        right: 25px;
+        top: 15%;
+        transform: translateY(-50%);
+        background-color: #f15d42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 3px 8px;
+        transition: background-color 0.3s ease;
+      }
+
+      /* ボタンのホバー時のスタイル */
+      .removetask:hover {
+        background-color: #e14c33;
       }
 
       .task-time {
         color: green;
-        margin-left: 8px;
+        margin-right: 15%;
+        margin-left: 15%;
       }
 
       .task-category:hover {
@@ -34,18 +58,18 @@
       }
 
       .task-category p {
-        margin: 10px 0;
+        margin: 6px 0;
         color: #dddddd;
         font-weight: 550;
       }
 
       .task-category i {
-        font-size: 24px;
+        font-size: 20px;
         margin-right: 10px;
         margin-left: 10px;
         margin-top: 5px;
         padding-bottom: 9px;
-        color: rgb(241, 85, 58);
+        color: rgb(248, 88, 56);
       }
 
       .screen {
@@ -61,7 +85,8 @@
       }
 
       .bigbox h2 {
-        margin: 60px 0 0 40px;
+        margin: 30px 0 0 20px;
+        color: #f15d42;
       }
 
       .bigbox h4 {
@@ -104,14 +129,6 @@
         margin-right: 10px;
         margin-top: 9px;
         color: #000000;
-      }
-
-      #preview {
-        width: 10px;
-        height: 10px;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        object-fit: cover;
       }
 
       .custom-checkbox {
@@ -235,34 +252,36 @@
       }
 
       .addtasks {
-        margin-bottom: 100px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
       }
 
       .addtasks p {
-        color: #000000;
-        padding: 2px 0 0 10px;
+        color: #555;
+        font-weight: 600;
       }
 
-      .addtasks:hover {
-        background-color: rgb(209, 209, 209);
+      .addtasks p:hover {
+        text-decoration: underline;
       }
 
       .addtasks button {
-        border-radius: 15px;
-        margin-right: 2px;
-        width: 28px;
-        height: 28px;
-        color: rgb(255, 255, 255);
-        background-color: rgb(241, 85, 58);
-        float: left;
-        margin-left: 6px;
+        background-color: #f15d42;
         border: none;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        margin-right: 10px;
+        cursor: pointer;
       }
 
       .sometasks .task {
-        padding: 20px;
-        border-top: 2px solid #ccc;
-        border-bottom: 2px solid #ccc;
+        padding: px;
+        border-top: 1.5px solid #ccc;
+        border-bottom: 1.5px solid #ccc;
         margin-bottom: 10px;
         background-color: #f9f9f9;
         border-radius: 8px;
@@ -279,192 +298,8 @@
         border-bottom-right-radius: 8px;
       }
 
-      .checkmark-blue {
-        position: absolute;
-        bottom: -11px;
-        left: 26px;
-        height: 20px;
-        width: 20px;
-        background-color: #e9e9e9;
-        border-radius: 50%;
-        border: 2px solid rgb(0, 0, 255);
-      }
-
-      .checkmark-blue:hover {
-        background-color: #0000ff;
-        border-color: #0000ff;
-      }
-
-      .checkmark-yellow {
-        position: absolute;
-        bottom: -11px;
-        left: 26px;
-        height: 20px;
-        width: 20px;
-        background-color: #e9e9e9;
-        border-radius: 50%;
-        border: 2px solid #dbbd36;
-      }
-
-      .checkmark-yellow:hover {
-        background-color: #ffdd44;
-        border-color: #ffdd44;
-      }
-
-      .checkmark-red {
-        position: absolute;
-        bottom: -11px;
-        left: 26px;
-        height: 20px;
-        width: 20px;
-        background-color: #e9e9e9;
-        border-radius: 50%;
-        border: 2px solid red;
-      }
-
-      .checkmark-red:hover {
-        background-color: #ff3333;
-        border-color: #ff3333;
-      }
-
-      .icon-today {
-        color: #ff6347;
-      }
-
-      .icon-tomorrow {
-        color: #1e90ff;
-      }
-
-      .icon-this-week {
-        color: #32cd32;
-      }
-
-      .icon-this-month {
-        color: #009b24;
-      }
-
-      .icon-next-month {
-        color: #ffa500;
-      }
-
-      .icon-no-schedule {
-        color: #808080;
-      }
-
-      .icon-inbox {
-        color: #ff9c07 !important;
-        margin-top: 15px !important;
-      }
-
-      .icon-work {
-        color: #0000b5 !important;
-        margin-top: 12px !important;
-      }
-
-      .icon-study {
-        color: #8a2be2 !important;
-        margin-top: 13px !important;
-      }
-
-      .icon-personal {
-        color: #ff1493 !important;
-        margin-top: 13px !important;
-      }
-
-      .icon-hobby {
-        color: #009b24 !important;
-        margin-top: 13px !important;
-      }
-
-      .icon-work:hover,
-      .icon-study:hover,
-      .icon-personal:hover,
-      .icon-hobby:hover {
-        color: green;
-      }
-
-      .category-item {
-        font-size: 16px;
-        margin: 10px 0;
-        display: flex;
-        align-items: center;
-        color: #adadad;
-        text-decoration: none;
-      }
-
-      .category-item:hover {
-        background-color: #e0e0e0;
-        text-decoration: none;
-      }
-
-      .category-link {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .category-icon {
-        margin-right: 10px;
-        font-size: 20px;
-        color: #000;
-        transition: color 0.3s ease;
-      }
-
-      .category-text {
-        font-weight: bold;
-        color: #666;
-      }
-
-      .category-icon:hover {
-        color: #ff4500;
-      }
-
-      .notification-bubble {
-        position: absolute;
-        top: 40px;
-        right: 10px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        width: 250px;
-        z-index: 1000;
-        display: none;
-      }
-
-      .notification-bubble.active {
-        display: block;
-      }
-
-      .notification-bubble ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .notification-bubble li {
-        margin-bottom: 10px;
-        padding: 5px 10px;
-        background-color: #f1f1f1;
-        border-radius: 5px;
-      }
-
-      .notification-bubble li:last-child {
-        margin-bottom: 0;
-      }
-
-      .bell-icon {
-        position: relative;
-        cursor: pointer;
-      }
-
-      .notification-bubble::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        right: 15px;
-        border-width: 10px;
-        border-style: solid;
-        border-color: transparent transparent #fff transparent;
+      .task-done {
+        text-decoration: line-through;
       }
 
       @media (min-width: 500px) {
@@ -527,11 +362,195 @@
           margin-left: 0;
         }
       }
+
+      .checkmark-blue {
+        position: absolute;
+        bottom: -8px;
+        left: 26px;
+        height: 15px;
+        width: 15px;
+        background-color: #e9e9e9;
+        border-radius: 50%;
+        border: 2px solid rgb(0, 0, 255);
+      }
+
+      .checkmark-blue:hover {
+        background-color: #0000ff;
+        border-color: #0000ff;
+      }
+
+      .checkmark-yellow {
+        position: absolute;
+        bottom: -8px;
+        left: 26px;
+        height: 15px;
+        width: 15px;
+        background-color: #e9e9e9;
+        border-radius: 50%;
+        border: 2px solid #dbbd36;
+      }
+
+      .checkmark-yellow:hover {
+        background-color: #ffdd44;
+        border-color: #ffdd44;
+      }
+
+      .checkmark-red {
+        position: absolute;
+        bottom: -8px;
+        left: 26px;
+        height: 15px;
+        width: 15px;
+        background-color: #e9e9e9;
+        border-radius: 50%;
+        border: 2px solid red;
+      }
+
+      .checkmark-red:hover {
+        background-color: #ff3333;
+        border-color: #ff3333;
+      }
+
+      .icon-today {
+        color: #ff6347;
+        /* 今日の予定 */
+      }
+
+      .icon-tomorrow {
+        color: #1e90ff;
+        /* 明日の予定 */
+      }
+
+      .icon-this-week {
+        color: #32cd32;
+        /* 今週の予定 */
+      }
+
+      .icon-this-month {
+        color: #009b24;
+      }
+
+      .icon-next-month {
+        color: #ffa500;
+        /* 来月の予定 */
+      }
+
+      .icon-no-schedule {
+        color: #808080;
+      }
+
+      .icon-inbox {
+        color: #ff6c04 !important;
+      }
+
+      .icon-work {
+        color: #2b00ff !important;
+      }
+
+      .icon-study {
+        color: #ec06bb !important;
+      }
+
+      .icon-personal {
+        color: #07eeff !important;
+      }
+
+      .icon-hobby {
+        color: #00ff00 !important;
+      }
+
+      .icon-work:hover,
+      .icon-study:hover,
+      .icon-personal:hover,
+      .icon-hobby:hover {
+        color: green;
+      }
+
+      /* pタグのスタイル */
+      .category-item {
+        font-size: 16px;
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #adadad;
+      }
+
+      /* iタグのスタイル */
+      .category-icon {
+        margin-right: 3px;
+        font-size: 20px;
+        color: #000;
+        transition: color 0.3s ease;
+      }
+
+      /* テキスト部分のスタイル */
+      .category-text {
+        font-weight: bold;
+        color: #d7d7d7;
+      }
+
+      /* アイコンにホバーしたときの色変更 */
+      .category-icon:hover {
+        color: #ff4500;
+        /* オレンジ色に変更 */
+      }
+
+      /* pタグ全体にホバーしたときの背景色変更 */
+      .category-item:hover {
+        color: #373737;
+      }
+
+      .notification-bubble {
+        position: absolute;
+        top: 40px;
+        /* アイコンの下に配置 */
+        right: 10px;
+        /* 右端に配置 */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 250px;
+        z-index: 1000;
+        display: none;
+      }
+
+      .notification-bubble.active {
+        display: block;
+      }
+
+      .notification-bubble ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .notification-bubble li {
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+      }
+
+      .notification-bubble li:last-child {
+        margin-bottom: 0;
+      }
+
+      .bell-icon {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .notification-bubble::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 15px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+      }
     </style>
-    <script
-      src="https://kit.fontawesome.com/657e6a1368.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
     <div id="app">
@@ -548,31 +567,26 @@
             <i class="fas fa-columns close-icon" @click="closeSideMenu"></i>
           </div>
 
-          <!-- Sidebar Category Buttons -->
           <div
             v-for="category in categories"
             :key="category"
             class="task-category"
           >
-            <p class="category-item">
-              <a
-                href="#"
-                @click.prevent="setActiveCategory(category)"
-                class="category-link"
-              >
+            <p class="category-item" @click="selectCategory(category)">
+              <a class="category-link">
                 <i :class="getCategoryIcon(category)" class="category-icon"></i>
-                <span class="category-text"
-                  >{{ category }} ({{ getCategoryCount(category) }})</span
-                >
+                <span class="category-text">
+                  {{ category }} ({{ getCategoryCount(category) }})
+                </span>
               </a>
             </p>
           </div>
         </div>
 
-        <!-- Main Content -->
         <div class="bigbox">
-          <h2>{{ activeCategory }}</h2>
+          <h2>{{ selectedCategory }}</h2>
 
+          <!-- 通知の吹き出しエリア -->
           <div v-if="showNotifications" class="notification-bubble">
             <ul>
               <li v-for="(notification, index) in notifications" :key="index">
@@ -581,28 +595,21 @@
             </ul>
           </div>
 
-          <div class="sometasks">
-            <div v-for="(tasks, inbox) in groupedTasks" :key="inbox">
-              <h4>{{ getInboxTitle(inbox) }}</h4>
-
-              <div
-                v-for="(task, index) in tasks"
-                :key="index"
-                :class="['task', { done: task.done }]"
-              >
-                <label class="custom-checkbox">
-                  <input type="checkbox" v-model="task.done" />
-                  <span
-                    :class="['checkmark', getCheckmarkColor(task.priority)]"
-                  ></span>
-                </label>
-                <span :class="['example-text', { 'task-done': task.done }]"
-                  >{{ task.text }}</span
-                >
-                <p>{{ task.description }}</p>
-                <p class="task-time" v-if="task.time">#{{ task.time }}</p>
-                <button class="removetask" @click="removeTask(task)">✖</button>
-              </div>
+          <div v-for="task in filteredTasks" :key="task.id">
+            <div :class="['task', { done: task.done }]">
+              <label class="custom-checkbox">
+                <input type="checkbox" v-model="task.done" />
+                <span
+                  :class="['checkmark', getCheckmarkColor(task.priority)]"
+                ></span>
+              </label>
+              <span :class="['example-text', { 'task-done': task.done }]">
+                {{ task.text }}
+              </span>
+              <p>{{ task.description }}</p>
+              <p class="task-time" v-if="task.time">⏰ {{ task.time }}</p>
+              <p class="task-date" v-if="task.date">📅 {{ task.date }}</p>
+              <button class="removetask" @click="removeTask(task)">✖</button>
             </div>
           </div>
 
@@ -610,7 +617,6 @@
             <button @click="toggleTaskForm">＋</button>
             <p @click="toggleTaskForm">タスクを追加</p>
           </div>
-
           <div v-if="showTaskForm" class="task-form">
             <div class="form-group">
               <label for="taskName">タスク名</label>
@@ -646,8 +652,17 @@
             </div>
 
             <div class="form-group">
+              <label for="taskDate">日にち</label>
+              <input type="date" id="taskDate" v-model="taskDate" />
+            </div>
+
+            <div class="form-group">
               <label for="taskInbox">インボックス</label>
-              <select id="taskInbox" v-model="taskInbox" disabled>
+              <select id="taskInbox" v-model="taskInbox">
+                <option value="inbox">インボックス</option>
+                <option value="personal">個人</option>
+                <option value="work">仕事</option>
+                <option value="study">学習</option>
                 <option value="hobby">趣味</option>
               </select>
             </div>
@@ -672,12 +687,12 @@
             isSideMenuOpen: false,
             showTaskForm: false,
             showNotifications: false,
-            activeCategory: "趣味",
             taskName: "",
             taskDescription: "",
             taskPriority: "low",
             taskTime: "",
-            taskInbox: "趣味",
+            taskDate: "",
+            selectedCategory: "インボックス",
             categories: [
               "今日の予定",
               "明日の予定",
@@ -693,51 +708,54 @@
             ],
             tasks: [
               {
+                id: 1, // タスク1にユニークなID
                 text: "例: タスク 1",
                 time: "10:00",
-                category: "趣味",
+                date: "2024-09-10",
+                category: "今週の予定",
                 done: false,
                 priority: "low",
+              },
+              {
+                id: 2, // タスク2にユニークなID
+                text: "例: タスク 2",
+                time: "12:00",
+                date: "2024-09-11",
+                category: "予定なし",
+                done: false,
+                priority: "medium",
               },
             ],
             notifications: [
               "新しいタスクが追加されました。",
-              "今日の予定があります。",
+              "今月の予定があります。",
             ],
           };
         },
         computed: {
-          groupedTasks() {
-            const grouped = {};
-            this.tasks.forEach((task) => {
-              if (!grouped[task.category]) {
-                grouped[task.category] = [];
-              }
-              grouped[task.category].push(task);
-            });
-            return grouped;
+          filteredTasks() {
+            return this.tasks.filter(
+              (task) => task.category === this.selectedCategory
+            );
           },
         },
         methods: {
           toggleSideMenu() {
             this.isSideMenuOpen = !this.isSideMenuOpen;
             const hamburgerMenu = document.querySelector(".hamburger-menu");
-            if (this.isSideMenuOpen) {
-              hamburgerMenu.style.display = "none";
-            } else {
-              hamburgerMenu.style.display = "block";
-            }
+            hamburgerMenu.style.display = this.isSideMenuOpen
+              ? "none"
+              : "block";
           },
           closeSideMenu() {
             this.isSideMenuOpen = false;
-            const hamburgerMenu = document.querySelector(".hamburger-menu");
-            hamburgerMenu.style.display = "block";
+            document.querySelector(".hamburger-menu").style.display = "block";
           },
           toggleTaskForm() {
             this.showTaskForm = !this.showTaskForm;
           },
-          setActiveCategory(category) {
-            this.activeCategory = category;
+          selectCategory(category) {
+            this.selectedCategory = category;
           },
           addDetailedTask() {
             if (this.taskName.trim() === "") {
@@ -746,26 +764,27 @@
             }
 
             const newTask = {
+              id: Date.now(), // 一意のIDを付与
               text: this.taskName,
               description: this.taskDescription,
               priority: this.taskPriority,
               time: this.taskTime,
-              category: this.taskInbox,
+              date: this.taskDate,
+              category: this.selectedCategory, // 選択されたカテゴリーを使用
               done: false,
             };
 
             this.tasks.push(newTask);
 
-            this.taskName = "";
-            this.taskDescription = "";
-            this.taskPriority = "low";
-            this.taskTime = "";
-            this.showTaskForm = false;
+            // フォームをリセット
+            this.resetForm();
 
             this.addNotification("新しいタスクが追加されました。");
           },
           removeTask(taskToRemove) {
-            this.tasks = this.tasks.filter((task) => task !== taskToRemove);
+            this.tasks = this.tasks.filter(
+              (task) => task.id !== taskToRemove.id
+            );
           },
           getCheckmarkColor(priority) {
             switch (priority) {
@@ -811,14 +830,20 @@
             return this.tasks.filter((task) => task.category === category)
               .length;
           },
-          getInboxTitle(category) {
-            return category;
+          resetForm() {
+            this.taskName = "";
+            this.taskDescription = "";
+            this.taskPriority = "low";
+            this.taskTime = "";
+            this.taskCategory = "インボックス";
+            this.showTaskForm = false;
           },
           cancelTask() {
             this.taskName = "";
             this.taskDescription = "";
             this.taskPriority = "low";
             this.taskTime = "";
+            this.taskInbox = "inbox";
             this.showTaskForm = false;
           },
           toggleNotifications() {
@@ -827,7 +852,6 @@
           addNotification(message) {
             this.notifications.push(message);
             this.showNotifications = true;
-
             setTimeout(() => {
               this.showNotifications = false;
             }, 5000);
